@@ -3,24 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagement.Presentation", "HotelManagement.Presentation\HotelManagement.Presentation.csproj", "{6E41D5B0-A1F4-49A7-8156-F49C72E301F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelManagement.Application", "HotelManagement.Application\HotelManagement.Application.csproj", "{2770DDD4-FACF-4E02-834A-5A356264B3A8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1565DF7F-A8F1-41E1-B48A-3C5AFB1F8E2C} = {1565DF7F-A8F1-41E1-B48A-3C5AFB1F8E2C}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelManagement.Domain", "HotelManagement.Domain\HotelManagement.Domain.csproj", "{1565DF7F-A8F1-41E1-B48A-3C5AFB1F8E2C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelManagement.Infrastructure", "HotelManagement.Infrastructure\HotelManagement.Infrastructure.csproj", "{65536D18-DB1A-46DF-B56A-857AA521E324}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1565DF7F-A8F1-41E1-B48A-3C5AFB1F8E2C} = {1565DF7F-A8F1-41E1-B48A-3C5AFB1F8E2C}
+		{2770DDD4-FACF-4E02-834A-5A356264B3A8} = {2770DDD4-FACF-4E02-834A-5A356264B3A8}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagement.Presentation", "HotelManagement.Presentation\HotelManagement.Presentation.csproj", "{52710825-6CC2-4470-9289-33B017E0F46D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1565DF7F-A8F1-41E1-B48A-3C5AFB1F8E2C} = {1565DF7F-A8F1-41E1-B48A-3C5AFB1F8E2C}
 		{2770DDD4-FACF-4E02-834A-5A356264B3A8} = {2770DDD4-FACF-4E02-834A-5A356264B3A8}
 		{65536D18-DB1A-46DF-B56A-857AA521E324} = {65536D18-DB1A-46DF-B56A-857AA521E324}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagement.Application", "HotelManagement.Application\HotelManagement.Application.csproj", "{2770DDD4-FACF-4E02-834A-5A356264B3A8}"
-	ProjectSection(ProjectDependencies) = postProject
-		{1565DF7F-A8F1-41E1-B48A-3C5AFB1F8E2C} = {1565DF7F-A8F1-41E1-B48A-3C5AFB1F8E2C}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagement.Domain", "HotelManagement.Domain\HotelManagement.Domain.csproj", "{1565DF7F-A8F1-41E1-B48A-3C5AFB1F8E2C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagement.Infrastructure", "HotelManagement.Infrastructure\HotelManagement.Infrastructure.csproj", "{65536D18-DB1A-46DF-B56A-857AA521E324}"
-	ProjectSection(ProjectDependencies) = postProject
-		{1565DF7F-A8F1-41E1-B48A-3C5AFB1F8E2C} = {1565DF7F-A8F1-41E1-B48A-3C5AFB1F8E2C}
-		{2770DDD4-FACF-4E02-834A-5A356264B3A8} = {2770DDD4-FACF-4E02-834A-5A356264B3A8}
 	EndProjectSection
 EndProject
 Global
@@ -29,10 +29,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6E41D5B0-A1F4-49A7-8156-F49C72E301F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E41D5B0-A1F4-49A7-8156-F49C72E301F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E41D5B0-A1F4-49A7-8156-F49C72E301F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E41D5B0-A1F4-49A7-8156-F49C72E301F4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2770DDD4-FACF-4E02-834A-5A356264B3A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2770DDD4-FACF-4E02-834A-5A356264B3A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2770DDD4-FACF-4E02-834A-5A356264B3A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{65536D18-DB1A-46DF-B56A-857AA521E324}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65536D18-DB1A-46DF-B56A-857AA521E324}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65536D18-DB1A-46DF-B56A-857AA521E324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52710825-6CC2-4470-9289-33B017E0F46D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52710825-6CC2-4470-9289-33B017E0F46D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52710825-6CC2-4470-9289-33B017E0F46D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52710825-6CC2-4470-9289-33B017E0F46D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
