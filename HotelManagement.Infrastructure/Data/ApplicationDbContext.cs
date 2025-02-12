@@ -29,7 +29,7 @@ namespace HotelManagement.Infrastructure.Data
 		}
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			var connectionString = "Server=HINOBY\\SQLEXPRESS;Database=HotelManagement;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True;";
+			var connectionString = ConfigurationManager.ConnectionStrings["HotelManagementDb"].ConnectionString;
 			optionsBuilder.UseSqlServer(connectionString);
 		}
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
