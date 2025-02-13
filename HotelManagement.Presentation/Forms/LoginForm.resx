@@ -121,7 +121,7 @@
   <data name="btnHome.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAKfhJREFUeF7t3YmXdGV94PH8BaOZxIwZM5mcJG4Yt4wTF1xGEZBNEAVBlKAsggoq
+        vAAADrwBlbxySQAAKfhJREFUeF7t3YmXdGV94PH8BaOZxIwZM5mcJG4Yt4wTF1xGEZBNEAVBlKAsggoq
         IgpRFJCIgigim7ggi4qCIioCsinu+44LipgXUVBEENzQO+dXyW2ffm53V93q6vs+9fTnd87nJHbdru7b
         /dLfqrv+2X/7x8c1AMB8+7P8AwDA/BF0AKiAoANABQQdACog6ABQAUEHgAoIOgBUQNABoAKCDgAVEHQA
         qICgA0AFBB0AKiDoAFABQQeACgg6AFRA0AGgAoIOABUQdACogKADQAUEHQAqIOgAUAFBB4AKCDoAVEDQ
@@ -303,7 +303,4 @@
         AaACgg4AFRB0AKiAoANABf4/mggKtdaR0kAAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="taiKhoanBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>

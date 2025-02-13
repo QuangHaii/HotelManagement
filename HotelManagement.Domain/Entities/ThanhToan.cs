@@ -11,6 +11,7 @@ namespace HotelManagement.Domain.Entities
 	public class ThanhToan
 	{
 		[Key]
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int PaymentID { get; set; }
 		public decimal Total { get; set; }
 		public DateTime PaymentDate { get; set; }

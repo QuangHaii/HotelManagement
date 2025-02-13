@@ -233,10 +233,10 @@ namespace HotelManagement.Infrastructure.Migrations
                 columns: new[] { "AccountID", "CreatedDate", "Email", "FirstName", "LastName", "Password", "Phone", "RoleID", "UserName" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 1, 15, 14, 32, 45, 0, DateTimeKind.Unspecified), "admin@example.com", "Nguyễn", "Văn A", "admin@123", "0123456789", 1, "admin123" },
-                    { 2, new DateTime(2023, 6, 7, 9, 20, 10, 0, DateTimeKind.Unspecified), "nhanvien@example.com", "Trần", "Thị B", "password123", "0987654321", 2, "nhanvien01" },
-                    { 3, new DateTime(2025, 11, 2, 18, 50, 30, 0, DateTimeKind.Unspecified), "khachhang@example.com", "Nguyễn", "Thị C", "password123", "0987654320", 3, "khachhang01" },
-                    { 4, new DateTime(2024, 4, 21, 7, 15, 55, 0, DateTimeKind.Unspecified), "khachhang@example.com", "Nguyễn", "Thị D", "password123", "0987654323", 3, "khachhang02" }
+                    { 1, new DateTime(2024, 1, 15, 14, 32, 45, 0, DateTimeKind.Unspecified), "admin@example.com", "A", "Nguyễn Văn", "admin@123", "0123456789", 1, "admin123" },
+                    { 2, new DateTime(2023, 6, 7, 9, 20, 10, 0, DateTimeKind.Unspecified), "nhanvien1@example.com", "B", "Trần Thị", "password123", "0987654321", 2, "nhanvien01" },
+                    { 3, new DateTime(2025, 11, 2, 18, 50, 30, 0, DateTimeKind.Unspecified), "khachhang1@example.com", "C", "Nguyễn Thị", "password123", "0987654320", 3, "khachhang01" },
+                    { 4, new DateTime(2024, 4, 21, 7, 15, 55, 0, DateTimeKind.Unspecified), "khachhang2@example.com", "D", "Nguyễn Thị", "password123", "0987654323", 3, "khachhang02" }
                 });
 
             migrationBuilder.InsertData(

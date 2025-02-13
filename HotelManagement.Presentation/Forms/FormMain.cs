@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using HotelManagement.Application.Interfaces;
+using HotelManagement.Domain.Entities;
+using HotelManagement.Presentation.Forms;
 
 namespace HotelManagement.Presentation
 {
@@ -19,7 +21,8 @@ namespace HotelManagement.Presentation
 		private Panel leftBorderBtn;
 		private Form currentChildForm;
 		private readonly IUnitOfWork _unitOfWork;
-		public FormMain(IUnitOfWork unitOfWork)
+		private TaiKhoan _currentUser;
+		public FormMain(IUnitOfWork unitOfWork, TaiKhoan currentUser)
 		{
 			InitializeComponent();
 			leftBorderBtn = new Panel();
@@ -30,7 +33,9 @@ namespace HotelManagement.Presentation
 			this.DoubleBuffered = true;
 			this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 			_unitOfWork = unitOfWork;
-			dataGridView1.DataSource = _unitOfWork.TaiKhoanRepository.GetAll();
+			_currentUser = currentUser;
+			txtCurrentUser.Text = "User: " + _currentUser.UserName;
+			txtName.Text = _currentUser.LastName + " " + _currentUser.FirstName;
 		}
 
 		private void ActiveButton(object senderBtn)
@@ -83,12 +88,14 @@ namespace HotelManagement.Presentation
 			panelDesktop.Controls.Add(childForm);
 			panelDesktop.Tag = childForm;
 			childForm.BringToFront();
+			childForm.Dock = DockStyle.Fill;
 			childForm.Show();
 		}
 
 		private void btnTrangChu_Click(object sender, EventArgs e)
 		{
 			ActiveButton(sender);
+			OpenChildForm(new NewCustomerForm(_unitOfWork));
 		}
 
 		private void btnKhachHang_Click(object sender, EventArgs e)
@@ -169,6 +176,13 @@ namespace HotelManagement.Presentation
 			{
 				btnSize.IconChar = IconChar.Maximize;
 			}
+		}
+
+		private void btnLogOut_Click(object sender, EventArgs e)
+		{
+			LoginForm loginForm = new LoginForm(_unitOfWork);
+			loginForm.Show();
+			this.Close();
 		}
 	}
 }

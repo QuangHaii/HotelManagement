@@ -11,6 +11,7 @@ namespace HotelManagement.Domain.Entities
 	public class Phong
 	{
 		[Key]
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int RoomID { get; set; }
 		public string RoomNumber { get; set; }
 		public int Floor { get; set; }

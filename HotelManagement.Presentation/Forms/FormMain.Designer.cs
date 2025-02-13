@@ -31,6 +31,9 @@
 			components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			panelMenu = new Panel();
+			txtName = new Label();
+			txtCurrentUser = new Label();
+			btnLogOut = new FontAwesome.Sharp.IconPictureBox();
 			btnHoaDon = new FontAwesome.Sharp.IconButton();
 			btnDichVu = new FontAwesome.Sharp.IconButton();
 			btnPhong = new FontAwesome.Sharp.IconButton();
@@ -48,8 +51,8 @@
 			panelShadow2 = new Panel();
 			panelDesktop = new Panel();
 			taiKhoanBindingSource = new BindingSource(components);
-			dataGridView1 = new DataGridView();
 			panelMenu.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)btnLogOut).BeginInit();
 			panelLogo.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)btnHome).BeginInit();
 			panelTitleBar.SuspendLayout();
@@ -57,14 +60,15 @@
 			((System.ComponentModel.ISupportInitialize)btnSize).BeginInit();
 			((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
 			((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).BeginInit();
-			panelDesktop.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)taiKhoanBindingSource).BeginInit();
-			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
 			SuspendLayout();
 			// 
 			// panelMenu
 			// 
 			panelMenu.BackColor = Color.FromArgb(14, 36, 66);
+			panelMenu.Controls.Add(txtName);
+			panelMenu.Controls.Add(txtCurrentUser);
+			panelMenu.Controls.Add(btnLogOut);
 			panelMenu.Controls.Add(btnHoaDon);
 			panelMenu.Controls.Add(btnDichVu);
 			panelMenu.Controls.Add(btnPhong);
@@ -77,6 +81,46 @@
 			panelMenu.Name = "panelMenu";
 			panelMenu.Size = new Size(257, 786);
 			panelMenu.TabIndex = 0;
+			// 
+			// txtName
+			// 
+			txtName.AutoSize = true;
+			txtName.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
+			txtName.ForeColor = Color.White;
+			txtName.Location = new Point(49, 761);
+			txtName.Margin = new Padding(4, 0, 4, 0);
+			txtName.Name = "txtName";
+			txtName.Size = new Size(46, 25);
+			txtName.TabIndex = 8;
+			txtName.Text = "Tên:";
+			// 
+			// txtCurrentUser
+			// 
+			txtCurrentUser.AutoSize = true;
+			txtCurrentUser.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
+			txtCurrentUser.ForeColor = Color.White;
+			txtCurrentUser.Location = new Point(49, 736);
+			txtCurrentUser.Margin = new Padding(4, 0, 4, 0);
+			txtCurrentUser.Name = "txtCurrentUser";
+			txtCurrentUser.Size = new Size(56, 25);
+			txtCurrentUser.TabIndex = 7;
+			txtCurrentUser.Text = "User:";
+			// 
+			// btnLogOut
+			// 
+			btnLogOut.BackColor = Color.FromArgb(12, 42, 92);
+			btnLogOut.ForeColor = Color.Red;
+			btnLogOut.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+			btnLogOut.IconColor = Color.Red;
+			btnLogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			btnLogOut.IconSize = 50;
+			btnLogOut.Location = new Point(0, 736);
+			btnLogOut.Margin = new Padding(4, 3, 4, 3);
+			btnLogOut.Name = "btnLogOut";
+			btnLogOut.Size = new Size(50, 50);
+			btnLogOut.TabIndex = 6;
+			btnLogOut.TabStop = false;
+			btnLogOut.Click += btnLogOut_Click;
 			// 
 			// btnHoaDon
 			// 
@@ -220,6 +264,7 @@
 			btnHome.TabIndex = 0;
 			btnHome.TabStop = false;
 			btnHome.Click += btnHome_Click;
+			btnHome.MouseDown += panelTitleBar_MouseDown;
 			// 
 			// panelShadow1
 			// 
@@ -333,7 +378,6 @@
 			// panelDesktop
 			// 
 			panelDesktop.BackColor = Color.FromArgb(12, 42, 92);
-			panelDesktop.Controls.Add(dataGridView1);
 			panelDesktop.Dock = DockStyle.Fill;
 			panelDesktop.Location = new Point(261, 40);
 			panelDesktop.Margin = new Padding(4, 3, 4, 3);
@@ -344,15 +388,6 @@
 			// taiKhoanBindingSource
 			// 
 			taiKhoanBindingSource.DataSource = typeof(Domain.Entities.TaiKhoan);
-			// 
-			// dataGridView1
-			// 
-			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridView1.Dock = DockStyle.Fill;
-			dataGridView1.Location = new Point(0, 0);
-			dataGridView1.Name = "dataGridView1";
-			dataGridView1.Size = new Size(980, 746);
-			dataGridView1.TabIndex = 0;
 			// 
 			// FormMain
 			// 
@@ -368,6 +403,8 @@
 			Name = "FormMain";
 			Text = "Form1";
 			panelMenu.ResumeLayout(false);
+			panelMenu.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)btnLogOut).EndInit();
 			panelLogo.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)btnHome).EndInit();
 			panelTitleBar.ResumeLayout(false);
@@ -376,9 +413,7 @@
 			((System.ComponentModel.ISupportInitialize)btnSize).EndInit();
 			((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
 			((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).EndInit();
-			panelDesktop.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)taiKhoanBindingSource).EndInit();
-			((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
 			ResumeLayout(false);
 		}
 
@@ -401,7 +436,9 @@
 		private FontAwesome.Sharp.IconPictureBox btnMini;
 		private FontAwesome.Sharp.IconPictureBox btnSize;
 		private FontAwesome.Sharp.IconPictureBox btnClose;
-		private DataGridView dataGridView1;
 		private BindingSource taiKhoanBindingSource;
+		private Label txtCurrentUser;
+		private FontAwesome.Sharp.IconPictureBox btnLogOut;
+		private Label txtName;
 	}
 }

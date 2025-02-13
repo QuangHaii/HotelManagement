@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace HotelManagement.Infrastructure.Repository
 {
@@ -19,6 +20,26 @@ namespace HotelManagement.Infrastructure.Repository
 		public void Update(TaiKhoan TaiKhoan)
 		{
 			_context.TaiKhoan.Update(TaiKhoan);
+		}
+
+		public TaiKhoan FindByEmail(string email)
+		{
+			return _context.TaiKhoan.FirstOrDefault(x => x.Email == email);
+		}
+
+		public TaiKhoan FindByPhone(string phone)
+		{
+			return _context.TaiKhoan.FirstOrDefault(x => x.Phone == phone);
+		}
+
+		public List<TaiKhoan> GetAllCustomers()
+		{
+			return _context.TaiKhoan.Where(x => x.RoleID == 3).ToList();
+		}
+
+		public List<TaiKhoan> GetAllEmployees()
+		{
+			return _context.TaiKhoan.Where(x => x.RoleID == 2).ToList();
 		}
 	}
 }

@@ -5,6 +5,7 @@ using HotelManagement.Infrastructure.Data;
 using System.Configuration;
 using HotelManagement.Application.Interfaces;
 using HotelManagement.Infrastructure.Repository;
+using HotelManagement.Presentation.Forms;
 
 namespace HotelManagement.Presentation
 {
@@ -26,8 +27,7 @@ namespace HotelManagement.Presentation
 			{
 				System.Windows.Forms.Application.EnableVisualStyles();
 				System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-
-				var mainForm = serviceProvider.GetRequiredService<FormMain>();
+				var mainForm = serviceProvider.GetRequiredService<LoginForm>();
 				System.Windows.Forms.Application.Run(mainForm);
 			}
 		}
@@ -43,7 +43,7 @@ namespace HotelManagement.Presentation
 			services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 			// Form registration
-			services.AddTransient<FormMain>();
+			services.AddTransient<LoginForm>();
 		}
 	}
 }

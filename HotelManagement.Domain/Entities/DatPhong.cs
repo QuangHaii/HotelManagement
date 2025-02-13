@@ -11,6 +11,7 @@ namespace HotelManagement.Domain.Entities
 	public class DatPhong
 	{
 		[Key]
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int BookingID { get; set; }
 		public DateTime CheckInDate { get; set; }
 		public DateTime CheckOutDate { get; set; }

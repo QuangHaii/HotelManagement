@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelManagement.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250212104421_Initialize")]
+    [Migration("20250213114953_Initialize")]
     partial class Initialize
     {
         /// <inheritdoc />
@@ -393,8 +393,8 @@ namespace HotelManagement.Infrastructure.Migrations
                             AccountID = 1,
                             CreatedDate = new DateTime(2024, 1, 15, 14, 32, 45, 0, DateTimeKind.Unspecified),
                             Email = "admin@example.com",
-                            FirstName = "Nguyễn",
-                            LastName = "Văn A",
+                            FirstName = "A",
+                            LastName = "Nguyễn Văn",
                             Password = "admin@123",
                             Phone = "0123456789",
                             RoleID = 1,
@@ -404,9 +404,9 @@ namespace HotelManagement.Infrastructure.Migrations
                         {
                             AccountID = 2,
                             CreatedDate = new DateTime(2023, 6, 7, 9, 20, 10, 0, DateTimeKind.Unspecified),
-                            Email = "nhanvien@example.com",
-                            FirstName = "Trần",
-                            LastName = "Thị B",
+                            Email = "nhanvien1@example.com",
+                            FirstName = "B",
+                            LastName = "Trần Thị",
                             Password = "password123",
                             Phone = "0987654321",
                             RoleID = 2,
@@ -416,9 +416,9 @@ namespace HotelManagement.Infrastructure.Migrations
                         {
                             AccountID = 3,
                             CreatedDate = new DateTime(2025, 11, 2, 18, 50, 30, 0, DateTimeKind.Unspecified),
-                            Email = "khachhang@example.com",
-                            FirstName = "Nguyễn",
-                            LastName = "Thị C",
+                            Email = "khachhang1@example.com",
+                            FirstName = "C",
+                            LastName = "Nguyễn Thị",
                             Password = "password123",
                             Phone = "0987654320",
                             RoleID = 3,
@@ -428,9 +428,9 @@ namespace HotelManagement.Infrastructure.Migrations
                         {
                             AccountID = 4,
                             CreatedDate = new DateTime(2024, 4, 21, 7, 15, 55, 0, DateTimeKind.Unspecified),
-                            Email = "khachhang@example.com",
-                            FirstName = "Nguyễn",
-                            LastName = "Thị D",
+                            Email = "khachhang2@example.com",
+                            FirstName = "D",
+                            LastName = "Nguyễn Thị",
                             Password = "password123",
                             Phone = "0987654323",
                             RoleID = 3,

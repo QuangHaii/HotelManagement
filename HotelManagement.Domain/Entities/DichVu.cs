@@ -11,6 +11,7 @@ namespace HotelManagement.Domain.Entities
 	public class DichVu
 	{
 		[Key]
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int ServiceID { get; set; }
 		[ForeignKey("DatPhong")]
 		public int BookingID { get; set; }
