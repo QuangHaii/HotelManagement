@@ -308,7 +308,7 @@
 			tableLayoutPanel2.SetRowSpan(lblSidePanel, 2);
 			lblSidePanel.Size = new Size(216, 60);
 			lblSidePanel.TabIndex = 4;
-			lblSidePanel.Text = "Thêm Khách Hàng Mới";
+			lblSidePanel.Text = "Thông Tin Khách Hàng";
 			lblSidePanel.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// iconCustomer
