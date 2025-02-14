@@ -41,12 +41,13 @@ namespace HotelManagement.Presentation.Forms
 					TênĐệm = customer.LastName,
 					GiớiTính = customer.Gender,
 					SốĐiệnThoại = customer.Phone,
-					Email = customer.Email,
+					Email = customer.Email.Replace("@", "\n@"),
 					ĐịaChỉ = customer.Address
 				});
 			}
 			dataGridView1.DataSource = null;
 			dataGridView1.DataSource = _customerDTOs;
+			dataGridView1.ClearSelection();
 		}
 
 		private void HidePanel()

@@ -648,8 +648,8 @@
 			// dataGridView1
 			// 
 			dataGridView1.AllowUserToDeleteRows = false;
-			dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-			dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+			dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 			dataGridView1.BackgroundColor = Color.FromArgb(14, 36, 66);
 			dataGridView1.BorderStyle = BorderStyle.None;
 			dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
