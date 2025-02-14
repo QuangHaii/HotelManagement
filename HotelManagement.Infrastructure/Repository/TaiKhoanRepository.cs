@@ -39,7 +39,7 @@ namespace HotelManagement.Infrastructure.Repository
 
 		public List<TaiKhoan> GetAllEmployees()
 		{
-			return _context.TaiKhoan.Where(x => x.RoleID == 2).ToList();
+			return _context.TaiKhoan.Where(x => x.RoleID != 3 && x.RoleID != 1).ToList();
 		}
 	}
 }

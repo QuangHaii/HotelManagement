@@ -38,17 +38,29 @@ namespace HotelManagement.Infrastructure.Data
 				new PhanQuyen {
 					RoleID = 1,
 					RoleName = "Quản trị viên",
-					Description = "Có quyền quản lý toàn bộ hệ thống."
+					Description = "Quản lý toàn bộ hệ thống."
 				},
 				new PhanQuyen {
 					RoleID = 2,
 					RoleName = "Nhân viên",
-					Description = "Có quyền quản lý dữ liệu và thực hiện các nghiệp vụ."
+					Description = "Quản lý dữ liệu và thực hiện các nghiệp vụ."
 				},
 				new PhanQuyen {
 					RoleID = 3,
 					RoleName = "Khách hàng",
-					Description = "Chỉ có quyền truy cập và sử dụng dịch vụ cơ bản."
+					Description = "Truy cập và sử dụng dịch vụ cơ bản."
+				},
+				new PhanQuyen
+				{
+					RoleID = 4,
+					RoleName = "Lễ tân",
+					Description = "Đón tiếp, hướng dẫn, trả lời câu hỏi của khách hàng."
+				},
+				new PhanQuyen
+				{
+					RoleID = 5,
+					RoleName = "Bảo vệ",
+					Description = "Đảm bảo an ninh và bảo vệ tài sản."
 				}
 			);
 
@@ -64,6 +76,7 @@ namespace HotelManagement.Infrastructure.Data
 					Phone = "0123456789",
 					Gender = "Nam",
 					Address = "123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh",
+					Status = "Hoạt động",
 					CreatedDate = new DateTime(2024, 1, 15, 14, 32, 45),
 					RoleID = 1,
 				},
@@ -78,6 +91,7 @@ namespace HotelManagement.Infrastructure.Data
 					Phone = "0987654321",
 					Gender = "Nữ",
 					Address = "123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh",
+					Status = "Hoạt động",
 					CreatedDate = new DateTime(2023, 6, 7, 9, 20, 10),
 					RoleID = 2
 				},
@@ -92,6 +106,7 @@ namespace HotelManagement.Infrastructure.Data
 					Phone = "0987654320",
 					Gender = "Nam",
 					Address = "123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh",
+					Status = "Tạm Dừng",
 					CreatedDate = new DateTime(2025, 11, 2, 18, 50, 30),
 					RoleID = 3
 				},
@@ -106,8 +121,39 @@ namespace HotelManagement.Infrastructure.Data
 					Phone = "0987654323",
 					Gender = "Nữ",
 					Address = "123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh",
+					Status = "Tạm Dừng",
 					CreatedDate = new DateTime(2024, 4, 21, 7, 15, 55),
 					RoleID = 3
+				},
+				new TaiKhoan
+				{
+					AccountID = 5,
+					UserName = "Nguyễn Thị F",
+					Password = "password123",
+					FirstName = "D",
+					LastName = "Nguyễn Thị",
+					Email = "khachhang2@example.com",
+					Phone = "0987654323",
+					Gender = "Nữ",
+					Address = "123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh",
+					Status = "Tạm Dừng",
+					CreatedDate = new DateTime(2024, 4, 21, 7, 15, 55),
+					RoleID = 4
+				},
+				new TaiKhoan
+				{
+					AccountID = 6,
+					UserName = "Nguyễn Thị G",
+					Password = "password123",
+					FirstName = "D",
+					LastName = "Nguyễn Thị",
+					Email = "khachhang2@example.com",
+					Phone = "0987654323",
+					Gender = "Nữ",
+					Address = "123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh",
+					Status = "Tạm Dừng",
+					CreatedDate = new DateTime(2024, 4, 21, 7, 15, 55),
+					RoleID = 5
 				}
 			);
 

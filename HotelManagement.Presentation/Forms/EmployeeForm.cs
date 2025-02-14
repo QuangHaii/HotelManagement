@@ -14,39 +14,44 @@ using System.Windows.Forms;
 
 namespace HotelManagement.Presentation.Forms
 {
-	public partial class CustomerForm : Form
+	public partial class EmployeeForm : Form
 	{
 		private readonly IUnitOfWork _unitOfWork;
-		private List<CustomerDTO> _customerDTOs;
+		private List<EmployeeDTO> _employeeDTOs;
 		private bool _isEdit = false;
-		public CustomerForm(IUnitOfWork unitOfWork)
+		public EmployeeForm(IUnitOfWork unitOfWork)
 		{
 			InitializeComponent();
 			_unitOfWork = unitOfWork;
-			_customerDTOs = new List<CustomerDTO>();
-			refreshCustomerList();
+			_employeeDTOs = new List<EmployeeDTO>();
+			refreshList();
 			HidePanel();
 		}
-		private void refreshCustomerList()
+
+
+		private void refreshList()
 		{
-			var list = _unitOfWork.TaiKhoanRepository.GetAllCustomers();
-			_customerDTOs.Clear();
-			foreach (var customer in list)
+			var list = _unitOfWork.TaiKhoanRepository.GetAllEmployees();
+			_employeeDTOs.Clear();
+			foreach (var employee in list)
 			{
-				_customerDTOs.Add(new CustomerDTO()
+				var role = _unitOfWork.PhanQuyenRepository.GetById(employee.RoleID);
+				_employeeDTOs.Add(new EmployeeDTO()
 				{
-					ID = customer.AccountID,
-					HọVàTên = customer.LastName + " " + customer.FirstName,
-					Tên = customer.FirstName,
-					TênĐệm = customer.LastName,
-					GiớiTính = customer.Gender,
-					SốĐiệnThoại = customer.Phone,
-					Email = customer.Email.Replace("@", "\n@"),
-					ĐịaChỉ = customer.Address
+					ID = employee.AccountID,
+					HọVàTên = employee.LastName + " " + employee.FirstName,
+					Tên = employee.FirstName,
+					TênĐệm = employee.LastName,
+					GiớiTính = employee.Gender,
+					SốĐiệnThoại = employee.Phone,
+					Email = employee.Email.Replace("@", "\n@"),
+					ĐịaChỉ = employee.Address,
+					CôngViệc = role.RoleName,
+					MôTả = role.Description
 				});
 			}
 			dataGridView1.DataSource = null;
-			dataGridView1.DataSource = _customerDTOs;
+			dataGridView1.DataSource = _employeeDTOs;
 		}
 		private void HidePanel()
 		{
@@ -60,6 +65,7 @@ namespace HotelManagement.Presentation.Forms
 			radioNam.Checked = false;
 			radioNu.Checked = false;
 			radioKhac.Checked = true;
+			cbRole.DataSource = _unitOfWork.PhanQuyenRepository.GetEmployeeRoles();
 		}
 		private void ShowPanel()
 		{
@@ -69,7 +75,7 @@ namespace HotelManagement.Presentation.Forms
 
 		private void btnAdd_Click(object sender, EventArgs e)
 		{
-			lblSidePanel.Text = "Thêm Khách Hàng";
+			lblSidePanel.Text = "Thêm Nhân Viên";
 			ShowPanel();
 		}
 
@@ -101,7 +107,7 @@ namespace HotelManagement.Presentation.Forms
 				MessageBox.Show("Số điện thoại không hợp lệ");
 				return;
 			}
-			
+
 			TaiKhoan taiKhoan = new TaiKhoan();
 			if (_isEdit)
 			{
@@ -116,8 +122,8 @@ namespace HotelManagement.Presentation.Forms
 			taiKhoan.Phone = txtPhone.TextString;
 			taiKhoan.Address = txtAddress.TextString;
 			taiKhoan.CreatedDate = DateTime.Now;
-			taiKhoan.RoleID = 3;
-			taiKhoan.Status = "Hoạt động";
+			taiKhoan.RoleID = _unitOfWork.PhanQuyenRepository.FindRoleID(cbRole.Text);
+			taiKhoan.Status = "Hoạt Động";
 			//Get selected radio button
 			string selectedText = "";
 			if (radioNam.Checked)
@@ -140,12 +146,12 @@ namespace HotelManagement.Presentation.Forms
 				MessageBox.Show("Thêm thành công!");
 			}
 			_unitOfWork.Save();
-			refreshCustomerList();
+			refreshList();
 			HidePanel();
 		}
 		private void btnRefresh_Click(object sender, EventArgs e)
 		{
-			refreshCustomerList();
+			refreshList();
 		}
 		private int GetIDFromTable()
 		{
@@ -167,7 +173,7 @@ namespace HotelManagement.Presentation.Forms
 			if (ID == -1)
 				return;
 			TaiKhoan taiKhoan = _unitOfWork.TaiKhoanRepository.GetById(ID);
-			lblSidePanel.Text = "Sửa Khách Hàng";
+			lblSidePanel.Text = "Sửa Nhân Viên";
 			ShowPanel();
 			txtAddress.TextString = taiKhoan.Address;
 			txtEmail.TextString = taiKhoan.Email;
@@ -189,7 +195,7 @@ namespace HotelManagement.Presentation.Forms
 				return;
 			_unitOfWork.TaiKhoanRepository.Remove(ID);
 			_unitOfWork.Save();
-			refreshCustomerList();
+			refreshList();
 			MessageBox.Show("Xóa thành công!");
 		}
 		private void btnSearch_Click(object sender, EventArgs e)
@@ -197,10 +203,10 @@ namespace HotelManagement.Presentation.Forms
 			string searchText = txtSearchBox.TextString;
 			if (string.IsNullOrWhiteSpace(searchText))
 			{
-				refreshCustomerList();
+				refreshList();
 				return;
 			}
-			var filteredList = _customerDTOs
+			var filteredList = _employeeDTOs
 		   .Where(c => c.HọVàTên.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
 					   c.SốĐiệnThoại.Contains(searchText) ||
 					   c.Email.Contains(searchText, StringComparison.OrdinalIgnoreCase))
@@ -228,6 +234,5 @@ namespace HotelManagement.Presentation.Forms
 
 			return regex.IsMatch(name);
 		}
-
 	}
 }

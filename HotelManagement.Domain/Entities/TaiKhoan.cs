@@ -21,6 +21,7 @@ namespace HotelManagement.Domain.Entities
 		public string Phone { get; set; }
 		public string Gender { get; set; }
 		public string Address { get; set; }
+		public string Status { get; set; }
 		public DateTime CreatedDate { get; set; }
 		[ForeignKey("PhanQuyen")]
 		public int RoleID { get; set; }

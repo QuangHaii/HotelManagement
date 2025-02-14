@@ -4,6 +4,7 @@ using HotelManagement.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelManagement.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250214164801_updateRole")]
+    partial class updateRole
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -260,19 +263,19 @@ namespace HotelManagement.Infrastructure.Migrations
                         new
                         {
                             RoleID = 1,
-                            Description = "Quản lý toàn bộ hệ thống.",
+                            Description = "Có quyền quản lý toàn bộ hệ thống.",
                             RoleName = "Quản trị viên"
                         },
                         new
                         {
                             RoleID = 2,
-                            Description = "Quản lý dữ liệu và thực hiện các nghiệp vụ.",
+                            Description = "Có quyền quản lý dữ liệu và thực hiện các nghiệp vụ.",
                             RoleName = "Nhân viên"
                         },
                         new
                         {
                             RoleID = 3,
-                            Description = "Truy cập và sử dụng dịch vụ cơ bản.",
+                            Description = "Chỉ có quyền truy cập và sử dụng dịch vụ cơ bản.",
                             RoleName = "Khách hàng"
                         },
                         new
@@ -468,36 +471,6 @@ namespace HotelManagement.Infrastructure.Migrations
                             RoleID = 3,
                             Status = "Tạm Dừng",
                             UserName = "Nguyễn Thị D"
-                        },
-                        new
-                        {
-                            AccountID = 5,
-                            Address = "123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh",
-                            CreatedDate = new DateTime(2024, 4, 21, 7, 15, 55, 0, DateTimeKind.Unspecified),
-                            Email = "khachhang2@example.com",
-                            FirstName = "D",
-                            Gender = "Nữ",
-                            LastName = "Nguyễn Thị",
-                            Password = "password123",
-                            Phone = "0987654323",
-                            RoleID = 4,
-                            Status = "Tạm Dừng",
-                            UserName = "Nguyễn Thị F"
-                        },
-                        new
-                        {
-                            AccountID = 6,
-                            Address = "123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh",
-                            CreatedDate = new DateTime(2024, 4, 21, 7, 15, 55, 0, DateTimeKind.Unspecified),
-                            Email = "khachhang2@example.com",
-                            FirstName = "D",
-                            Gender = "Nữ",
-                            LastName = "Nguyễn Thị",
-                            Password = "password123",
-                            Phone = "0987654323",
-                            RoleID = 5,
-                            Status = "Tạm Dừng",
-                            UserName = "Nguyễn Thị G"
                         });
                 });
 

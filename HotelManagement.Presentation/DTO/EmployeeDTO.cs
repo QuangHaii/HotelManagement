@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelManagement.Presentation.DTO
 {
-	public class CustomerDTO
+	public class EmployeeDTO
 	{
 		public int ID { get; set; }
 		public string HọVàTên { get; set; }
@@ -16,5 +16,7 @@ namespace HotelManagement.Presentation.DTO
 		public string SốĐiệnThoại { get; set; }
 		public string Email { get; set; }
 		public string ĐịaChỉ { get; set; }
+		public string CôngViệc { get; set; }
+		public string MôTả { get; set; }
 	}
 }

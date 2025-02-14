@@ -106,6 +106,7 @@ namespace HotelManagement.Presentation
 		private void btnPhong_Click(object sender, EventArgs e)
 		{
 			ActiveButton(sender);
+			OpenChildForm(new EmployeeForm(_unitOfWork));
 		}
 
 		private void btnDichVu_Click(object sender, EventArgs e)

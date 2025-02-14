@@ -1,6 +1,6 @@
 ﻿namespace HotelManagement.Presentation.Forms
 {
-	partial class CustomerForm
+	partial class EmployeeForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -42,6 +42,7 @@
 			btnDelete = new FontAwesome.Sharp.IconButton();
 			panelSide = new Panel();
 			tableLayoutPanel2 = new TableLayoutPanel();
+			label2 = new Label();
 			lblSidePanel = new Label();
 			iconCustomer = new FontAwesome.Sharp.IconPictureBox();
 			txtAddress = new CustomControl.CustomTextBox();
@@ -58,6 +59,7 @@
 			label7 = new Label();
 			label8 = new Label();
 			radioNam = new RadioButton();
+			cbRole = new ComboBox();
 			panel3 = new Panel();
 			btnCancel = new FontAwesome.Sharp.IconButton();
 			btnAccept = new FontAwesome.Sharp.IconButton();
@@ -173,7 +175,7 @@
 			label1.Name = "label1";
 			label1.Size = new Size(153, 56);
 			label1.TabIndex = 1;
-			label1.Text = "Tìm khách hàng :";
+			label1.Text = "Tìm nhân viên :";
 			label1.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// btnAdd
@@ -257,6 +259,7 @@
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+			tableLayoutPanel2.Controls.Add(label2, 0, 13);
 			tableLayoutPanel2.Controls.Add(lblSidePanel, 1, 0);
 			tableLayoutPanel2.Controls.Add(iconCustomer, 0, 0);
 			tableLayoutPanel2.Controls.Add(txtAddress, 0, 12);
@@ -273,6 +276,7 @@
 			tableLayoutPanel2.Controls.Add(label7, 0, 9);
 			tableLayoutPanel2.Controls.Add(label8, 0, 11);
 			tableLayoutPanel2.Controls.Add(radioNam, 1, 6);
+			tableLayoutPanel2.Controls.Add(cbRole, 0, 14);
 			tableLayoutPanel2.Dock = DockStyle.Fill;
 			tableLayoutPanel2.Location = new Point(5, 5);
 			tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -296,6 +300,19 @@
 			tableLayoutPanel2.Size = new Size(295, 480);
 			tableLayoutPanel2.TabIndex = 4;
 			// 
+			// label2
+			// 
+			label2.AutoSize = true;
+			tableLayoutPanel2.SetColumnSpan(label2, 4);
+			label2.Dock = DockStyle.Bottom;
+			label2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic);
+			label2.ForeColor = Color.White;
+			label2.Location = new Point(3, 401);
+			label2.Name = "label2";
+			label2.Size = new Size(289, 19);
+			label2.TabIndex = 35;
+			label2.Text = "Công việc:";
+			// 
 			// lblSidePanel
 			// 
 			lblSidePanel.AutoSize = true;
@@ -308,7 +325,7 @@
 			tableLayoutPanel2.SetRowSpan(lblSidePanel, 2);
 			lblSidePanel.Size = new Size(216, 60);
 			lblSidePanel.TabIndex = 4;
-			lblSidePanel.Text = "Thông Tin Khách Hàng";
+			lblSidePanel.Text = "Thông Tin Nhân Viên";
 			lblSidePanel.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// iconCustomer
@@ -457,7 +474,7 @@
 			label3.Name = "label3";
 			label3.Size = new Size(140, 19);
 			label3.TabIndex = 1;
-			label3.Text = "Tên khách hàng :";
+			label3.Text = "Tên nhân viên :";
 			// 
 			// label4
 			// 
@@ -558,6 +575,16 @@
 			radioNam.TabIndex = 27;
 			radioNam.Text = "Nam";
 			radioNam.UseVisualStyleBackColor = true;
+			// 
+			// cbRole
+			// 
+			tableLayoutPanel2.SetColumnSpan(cbRole, 2);
+			cbRole.Dock = DockStyle.Fill;
+			cbRole.FormattingEnabled = true;
+			cbRole.Location = new Point(3, 423);
+			cbRole.Name = "cbRole";
+			cbRole.Size = new Size(140, 23);
+			cbRole.TabIndex = 36;
 			// 
 			// panel3
 			// 
@@ -703,7 +730,7 @@
 			dataGridView1.Size = new Size(500, 540);
 			dataGridView1.TabIndex = 0;
 			// 
-			// CustomerForm
+			// EmployeeForm
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
@@ -712,7 +739,7 @@
 			Controls.Add(panelSide);
 			Controls.Add(panelTop);
 			FormBorderStyle = FormBorderStyle.None;
-			Name = "CustomerForm";
+			Name = "EmployeeForm";
 			Text = "RoleForm";
 			panelTop.ResumeLayout(false);
 			panelTop.PerformLayout();
@@ -763,5 +790,7 @@
 		private DataGridView dataGridView1;
 		private CustomControl.CustomTextBox txtSearchBox;
 		private FontAwesome.Sharp.IconButton btnSearch;
+		private Label label2;
+		private ComboBox cbRole;
 	}
 }

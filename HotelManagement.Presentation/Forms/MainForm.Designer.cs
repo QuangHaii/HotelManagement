@@ -174,7 +174,7 @@
 			btnPhong.Padding = new Padding(12, 0, 12, 0);
 			btnPhong.Size = new Size(257, 69);
 			btnPhong.TabIndex = 3;
-			btnPhong.Text = "Quản Lý Phòng";
+			btnPhong.Text = "Quản Lý Nhân Viên";
 			btnPhong.TextAlign = ContentAlignment.MiddleLeft;
 			btnPhong.TextImageRelation = TextImageRelation.ImageBeforeText;
 			btnPhong.UseVisualStyleBackColor = true;
