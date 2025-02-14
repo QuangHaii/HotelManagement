@@ -27,7 +27,7 @@ namespace HotelManagement.Presentation
 			{
 				System.Windows.Forms.Application.EnableVisualStyles();
 				System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-				var mainForm = serviceProvider.GetRequiredService<LoginForm>();
+				var mainForm = serviceProvider.GetRequiredService<MainForm>();
 				System.Windows.Forms.Application.Run(mainForm);
 			}
 		}
@@ -44,6 +44,8 @@ namespace HotelManagement.Presentation
 
 			// Form registration
 			services.AddTransient<LoginForm>();
+			services.AddTransient<MainForm>();
+
 		}
 	}
 }

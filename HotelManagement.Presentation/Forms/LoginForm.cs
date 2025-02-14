@@ -66,7 +66,7 @@ namespace HotelManagement.Presentation.Forms
 				return;
 			}
 			MessageBox.Show("Đăng nhập thành công !");
-			FormMain formMain = new FormMain(_unitOfWork,account);
+			MainForm formMain = new MainForm(_unitOfWork,account);
 			formMain.Show();
 			this.Hide();
 		}

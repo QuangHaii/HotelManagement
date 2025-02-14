@@ -1,6 +1,6 @@
 ﻿namespace HotelManagement.Presentation
 {
-	partial class FormMain
+	partial class MainForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -29,10 +29,9 @@
 		private void InitializeComponent()
 		{
 			components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			panelMenu = new Panel();
 			txtName = new Label();
-			txtCurrentUser = new Label();
 			btnLogOut = new FontAwesome.Sharp.IconPictureBox();
 			btnHoaDon = new FontAwesome.Sharp.IconButton();
 			btnDichVu = new FontAwesome.Sharp.IconButton();
@@ -67,7 +66,6 @@
 			// 
 			panelMenu.BackColor = Color.FromArgb(14, 36, 66);
 			panelMenu.Controls.Add(txtName);
-			panelMenu.Controls.Add(txtCurrentUser);
 			panelMenu.Controls.Add(btnLogOut);
 			panelMenu.Controls.Add(btnHoaDon);
 			panelMenu.Controls.Add(btnDichVu);
@@ -87,28 +85,16 @@
 			txtName.AutoSize = true;
 			txtName.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
 			txtName.ForeColor = Color.White;
-			txtName.Location = new Point(49, 761);
+			txtName.Location = new Point(58, 752);
 			txtName.Margin = new Padding(4, 0, 4, 0);
 			txtName.Name = "txtName";
 			txtName.Size = new Size(46, 25);
 			txtName.TabIndex = 8;
 			txtName.Text = "Tên:";
 			// 
-			// txtCurrentUser
-			// 
-			txtCurrentUser.AutoSize = true;
-			txtCurrentUser.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
-			txtCurrentUser.ForeColor = Color.White;
-			txtCurrentUser.Location = new Point(49, 736);
-			txtCurrentUser.Margin = new Padding(4, 0, 4, 0);
-			txtCurrentUser.Name = "txtCurrentUser";
-			txtCurrentUser.Size = new Size(56, 25);
-			txtCurrentUser.TabIndex = 7;
-			txtCurrentUser.Text = "User:";
-			// 
 			// btnLogOut
 			// 
-			btnLogOut.BackColor = Color.FromArgb(12, 42, 92);
+			btnLogOut.BackColor = Color.FromArgb(14, 36, 66);
 			btnLogOut.ForeColor = Color.Red;
 			btnLogOut.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
 			btnLogOut.IconColor = Color.Red;
@@ -389,7 +375,7 @@
 			// 
 			taiKhoanBindingSource.DataSource = typeof(Domain.Entities.TaiKhoan);
 			// 
-			// FormMain
+			// MainForm
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
@@ -400,7 +386,7 @@
 			Controls.Add(panelShadow1);
 			Controls.Add(panelMenu);
 			Margin = new Padding(4, 3, 4, 3);
-			Name = "FormMain";
+			Name = "MainForm";
 			Text = "Form1";
 			panelMenu.ResumeLayout(false);
 			panelMenu.PerformLayout();

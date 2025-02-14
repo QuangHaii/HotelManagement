@@ -56,48 +56,56 @@ namespace HotelManagement.Infrastructure.Data
 				new TaiKhoan
 				{
 					AccountID = 1,
-					UserName = "admin123",
+					UserName = "Nguyễn Văn A",
 					Password = "admin@123",
 					FirstName = "A",
 					LastName = "Nguyễn Văn",
 					Email = "admin@example.com",
 					Phone = "0123456789",
+					Gender = "Nam",
+					Address = "123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh",
 					CreatedDate = new DateTime(2024, 1, 15, 14, 32, 45),
 					RoleID = 1,
 				},
 				new TaiKhoan
 				{
 					AccountID = 2,
-					UserName = "nhanvien01",
+					UserName = "Trần Thị B",
 					Password = "password123",
 					FirstName = "B",
 					LastName = "Trần Thị",
 					Email = "nhanvien1@example.com",
 					Phone = "0987654321",
+					Gender = "Nữ",
+					Address = "123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh",
 					CreatedDate = new DateTime(2023, 6, 7, 9, 20, 10),
 					RoleID = 2
 				},
 				new TaiKhoan
 				{
 					AccountID = 3,
-					UserName = "khachhang01",
+					UserName = "Nguyễn Thị C",
 					Password = "password123",
 					FirstName = "C",
 					LastName = "Nguyễn Thị",
 					Email = "khachhang1@example.com",
 					Phone = "0987654320",
+					Gender = "Nam",
+					Address = "123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh",
 					CreatedDate = new DateTime(2025, 11, 2, 18, 50, 30),
 					RoleID = 3
 				},
 				new TaiKhoan
 				{
 					AccountID = 4,
-					UserName = "khachhang02",
+					UserName = "Nguyễn Thị D",
 					Password = "password123",
 					FirstName = "D",
 					LastName = "Nguyễn Thị",
 					Email = "khachhang2@example.com",
 					Phone = "0987654323",
+					Gender = "Nữ",
+					Address = "123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh",
 					CreatedDate = new DateTime(2024, 4, 21, 7, 15, 55),
 					RoleID = 3
 				}

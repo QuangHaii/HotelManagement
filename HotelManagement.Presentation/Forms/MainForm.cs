@@ -15,14 +15,14 @@ using HotelManagement.Presentation.Forms;
 
 namespace HotelManagement.Presentation
 {
-	public partial class FormMain : Form
+	public partial class MainForm : Form
 	{
 		private IconButton currentBtn;
 		private Panel leftBorderBtn;
 		private Form currentChildForm;
 		private readonly IUnitOfWork _unitOfWork;
 		private TaiKhoan _currentUser;
-		public FormMain(IUnitOfWork unitOfWork, TaiKhoan currentUser)
+		public MainForm(IUnitOfWork unitOfWork, TaiKhoan currentUser = null)
 		{
 			InitializeComponent();
 			leftBorderBtn = new Panel();
@@ -33,9 +33,8 @@ namespace HotelManagement.Presentation
 			this.DoubleBuffered = true;
 			this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 			_unitOfWork = unitOfWork;
-			_currentUser = currentUser;
-			txtCurrentUser.Text = "User: " + _currentUser.UserName;
-			txtName.Text = _currentUser.LastName + " " + _currentUser.FirstName;
+			//_currentUser = currentUser;
+			//txtName.Text = _currentUser.LastName + " " + _currentUser.FirstName;
 		}
 
 		private void ActiveButton(object senderBtn)
@@ -95,12 +94,13 @@ namespace HotelManagement.Presentation
 		private void btnTrangChu_Click(object sender, EventArgs e)
 		{
 			ActiveButton(sender);
-			OpenChildForm(new NewCustomerForm(_unitOfWork));
+			//OpenChildForm(new A(_unitOfWork));
 		}
 
 		private void btnKhachHang_Click(object sender, EventArgs e)
 		{
 			ActiveButton(sender);
+			OpenChildForm(new CustomerForm(_unitOfWork));
 		}
 
 		private void btnPhong_Click(object sender, EventArgs e)

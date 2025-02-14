@@ -11,6 +11,6 @@ namespace HotelManagement.Application.Interfaces
 		IEnumerable<T> GetAll();
 		T GetById(int id);
 		void Add(T entity);
-		void Remove(T id);
+		void Remove(int id);
 	}
 }

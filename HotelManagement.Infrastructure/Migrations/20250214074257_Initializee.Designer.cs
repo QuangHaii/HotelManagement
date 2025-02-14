@@ -4,6 +4,7 @@ using HotelManagement.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelManagement.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250214074257_Initializee")]
+    partial class Initializee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -405,7 +408,7 @@ namespace HotelManagement.Infrastructure.Migrations
                             Password = "admin@123",
                             Phone = "0123456789",
                             RoleID = 1,
-                            UserName = "Nguyễn Văn A"
+                            UserName = "admin123"
                         },
                         new
                         {
@@ -419,7 +422,7 @@ namespace HotelManagement.Infrastructure.Migrations
                             Password = "password123",
                             Phone = "0987654321",
                             RoleID = 2,
-                            UserName = "Trần Thị B"
+                            UserName = "nhanvien01"
                         },
                         new
                         {
@@ -433,7 +436,7 @@ namespace HotelManagement.Infrastructure.Migrations
                             Password = "password123",
                             Phone = "0987654320",
                             RoleID = 3,
-                            UserName = "Nguyễn Thị C"
+                            UserName = "khachhang01"
                         },
                         new
                         {
@@ -447,7 +450,7 @@ namespace HotelManagement.Infrastructure.Migrations
                             Password = "password123",
                             Phone = "0987654323",
                             RoleID = 3,
-                            UserName = "Nguyễn Thị D"
+                            UserName = "khachhang02"
                         });
                 });
 

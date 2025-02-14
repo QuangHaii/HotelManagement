@@ -104,7 +104,7 @@
 			// 
 			lblEmail.AutoSize = true;
 			lblEmail.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
-			lblEmail.ForeColor = Color.FromArgb(255, 185, 70);
+			lblEmail.ForeColor = Color.FromArgb(78, 205, 196);
 			lblEmail.Location = new Point(39, 258);
 			lblEmail.Name = "lblEmail";
 			lblEmail.Size = new Size(55, 18);
@@ -115,7 +115,7 @@
 			// 
 			label1.AutoSize = true;
 			label1.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
-			label1.ForeColor = Color.FromArgb(255, 185, 70);
+			label1.ForeColor = Color.FromArgb(78, 205, 196);
 			label1.Location = new Point(39, 348);
 			label1.Name = "label1";
 			label1.Size = new Size(87, 18);
@@ -140,7 +140,7 @@
 			txtEmail.Size = new Size(256, 32);
 			txtEmail.TabIndex = 5;
 			txtEmail.TextColor = SystemColors.WindowText;
-			txtEmail.Texts = "";
+			txtEmail.TextString = "";
 			txtEmail.UnderlinedStyle = false;
 			// 
 			// txtPassword
@@ -161,7 +161,7 @@
 			txtPassword.Size = new Size(256, 32);
 			txtPassword.TabIndex = 6;
 			txtPassword.TextColor = SystemColors.WindowText;
-			txtPassword.Texts = "";
+			txtPassword.TextString = "";
 			txtPassword.UnderlinedStyle = false;
 			// 
 			// linkLabel1
@@ -215,6 +215,7 @@
 			ForeColor = Color.Transparent;
 			FormBorderStyle = FormBorderStyle.None;
 			Name = "LoginForm";
+			StartPosition = FormStartPosition.CenterScreen;
 			Text = "LoginForm";
 			panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)btnMini).EndInit();

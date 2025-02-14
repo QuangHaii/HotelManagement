@@ -33,8 +33,9 @@ namespace HotelManagement.Infrastructure.Repository
 			return dbSet.Find(id);
 		}
 
-		public void Remove(T entity)
+		public void Remove(int id)
 		{
+			T entity = dbSet.Find(id);
 			dbSet.Remove(entity);
 		}
 
