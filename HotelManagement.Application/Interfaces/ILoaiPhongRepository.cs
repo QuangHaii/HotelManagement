@@ -10,5 +10,8 @@ namespace HotelManagement.Application.Interfaces
 	public interface ILoaiPhongRepository : IRepository<LoaiPhong>
 	{
 		void Update(LoaiPhong loaiPhong);
+		List<string> getListRoomType();
+		int getRoomTypeID(string roomTypeName);
+		string getRoomTypeName(int roomTypeID);
 	}
 }

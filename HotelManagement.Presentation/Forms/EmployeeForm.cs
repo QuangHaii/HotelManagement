@@ -186,6 +186,7 @@ namespace HotelManagement.Presentation.Forms
 				radioNu.Checked = true;
 			else if (taiKhoan.Gender == "Khác")
 				radioKhac.Checked = true;
+			cbRole.SelectedItem = _unitOfWork.PhanQuyenRepository.FindRoleName(taiKhoan.RoleID);
 			_isEdit = true;
 		}
 		private void btnDelete_Click(object sender, EventArgs e)

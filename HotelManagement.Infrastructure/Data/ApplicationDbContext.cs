@@ -196,7 +196,7 @@ namespace HotelManagement.Infrastructure.Data
 					RoomID = 102,
 					RoomNumber = "B202",
 					Floor = 2,
-					Status = "Đang sử dụng",
+					Status = "Đã đặt",
 					RoomTypeID = 102,
 				},
 				new Phong
@@ -204,7 +204,7 @@ namespace HotelManagement.Infrastructure.Data
 					RoomID = 103,
 					RoomNumber = "C303",
 					Floor = 3,
-					Status = "Bảo trì",
+					Status = "Đã đặt",
 					RoomTypeID = 101,
 				},
 				new Phong
@@ -212,7 +212,7 @@ namespace HotelManagement.Infrastructure.Data
 					RoomID = 104,
 					RoomNumber = "D404",
 					Floor = 4,
-					Status = "Đang sử dụng",
+					Status = "Đã nhận",
 					RoomTypeID = 103,
 				}
 				);

@@ -34,8 +34,8 @@
 			txtName = new Label();
 			btnLogOut = new FontAwesome.Sharp.IconPictureBox();
 			btnHoaDon = new FontAwesome.Sharp.IconButton();
-			btnDichVu = new FontAwesome.Sharp.IconButton();
 			btnPhong = new FontAwesome.Sharp.IconButton();
+			btnNhanVien = new FontAwesome.Sharp.IconButton();
 			btnKhachHang = new FontAwesome.Sharp.IconButton();
 			btnTrangChu = new FontAwesome.Sharp.IconButton();
 			panelLogo = new Panel();
@@ -68,8 +68,8 @@
 			panelMenu.Controls.Add(txtName);
 			panelMenu.Controls.Add(btnLogOut);
 			panelMenu.Controls.Add(btnHoaDon);
-			panelMenu.Controls.Add(btnDichVu);
 			panelMenu.Controls.Add(btnPhong);
+			panelMenu.Controls.Add(btnNhanVien);
 			panelMenu.Controls.Add(btnKhachHang);
 			panelMenu.Controls.Add(btnTrangChu);
 			panelMenu.Controls.Add(panelLogo);
@@ -132,30 +132,6 @@
 			btnHoaDon.UseVisualStyleBackColor = true;
 			btnHoaDon.Click += btnHoaDon_Click;
 			// 
-			// btnDichVu
-			// 
-			btnDichVu.Dock = DockStyle.Top;
-			btnDichVu.FlatAppearance.BorderSize = 0;
-			btnDichVu.FlatStyle = FlatStyle.Flat;
-			btnDichVu.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-			btnDichVu.ForeColor = Color.White;
-			btnDichVu.IconChar = FontAwesome.Sharp.IconChar.EnvelopesBulk;
-			btnDichVu.IconColor = Color.White;
-			btnDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			btnDichVu.IconSize = 32;
-			btnDichVu.ImageAlign = ContentAlignment.MiddleLeft;
-			btnDichVu.Location = new Point(0, 380);
-			btnDichVu.Margin = new Padding(4, 3, 4, 3);
-			btnDichVu.Name = "btnDichVu";
-			btnDichVu.Padding = new Padding(12, 0, 12, 0);
-			btnDichVu.Size = new Size(257, 69);
-			btnDichVu.TabIndex = 4;
-			btnDichVu.Text = "Quản Lý Dịch Vụ";
-			btnDichVu.TextAlign = ContentAlignment.MiddleLeft;
-			btnDichVu.TextImageRelation = TextImageRelation.ImageBeforeText;
-			btnDichVu.UseVisualStyleBackColor = true;
-			btnDichVu.Click += btnDichVu_Click;
-			// 
 			// btnPhong
 			// 
 			btnPhong.Dock = DockStyle.Top;
@@ -163,22 +139,46 @@
 			btnPhong.FlatStyle = FlatStyle.Flat;
 			btnPhong.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
 			btnPhong.ForeColor = Color.White;
-			btnPhong.IconChar = FontAwesome.Sharp.IconChar.HouseChimneyWindow;
+			btnPhong.IconChar = FontAwesome.Sharp.IconChar.House;
 			btnPhong.IconColor = Color.White;
 			btnPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			btnPhong.IconSize = 32;
 			btnPhong.ImageAlign = ContentAlignment.MiddleLeft;
-			btnPhong.Location = new Point(0, 311);
+			btnPhong.Location = new Point(0, 380);
 			btnPhong.Margin = new Padding(4, 3, 4, 3);
 			btnPhong.Name = "btnPhong";
 			btnPhong.Padding = new Padding(12, 0, 12, 0);
 			btnPhong.Size = new Size(257, 69);
-			btnPhong.TabIndex = 3;
-			btnPhong.Text = "Quản Lý Nhân Viên";
+			btnPhong.TabIndex = 4;
+			btnPhong.Text = "Quản Lý Phòng";
 			btnPhong.TextAlign = ContentAlignment.MiddleLeft;
 			btnPhong.TextImageRelation = TextImageRelation.ImageBeforeText;
 			btnPhong.UseVisualStyleBackColor = true;
 			btnPhong.Click += btnPhong_Click;
+			// 
+			// btnNhanVien
+			// 
+			btnNhanVien.Dock = DockStyle.Top;
+			btnNhanVien.FlatAppearance.BorderSize = 0;
+			btnNhanVien.FlatStyle = FlatStyle.Flat;
+			btnNhanVien.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
+			btnNhanVien.ForeColor = Color.White;
+			btnNhanVien.IconChar = FontAwesome.Sharp.IconChar.Person;
+			btnNhanVien.IconColor = Color.White;
+			btnNhanVien.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			btnNhanVien.IconSize = 32;
+			btnNhanVien.ImageAlign = ContentAlignment.MiddleLeft;
+			btnNhanVien.Location = new Point(0, 311);
+			btnNhanVien.Margin = new Padding(4, 3, 4, 3);
+			btnNhanVien.Name = "btnNhanVien";
+			btnNhanVien.Padding = new Padding(12, 0, 12, 0);
+			btnNhanVien.Size = new Size(257, 69);
+			btnNhanVien.TabIndex = 3;
+			btnNhanVien.Text = "Quản Lý Nhân Viên";
+			btnNhanVien.TextAlign = ContentAlignment.MiddleLeft;
+			btnNhanVien.TextImageRelation = TextImageRelation.ImageBeforeText;
+			btnNhanVien.UseVisualStyleBackColor = true;
+			btnNhanVien.Click += btnNhanVien_Click;
 			// 
 			// btnKhachHang
 			// 
@@ -409,8 +409,8 @@
 		private FontAwesome.Sharp.IconButton btnTrangChu;
 		private System.Windows.Forms.Panel panelLogo;
 		private FontAwesome.Sharp.IconButton btnHoaDon;
-		private FontAwesome.Sharp.IconButton btnDichVu;
 		private FontAwesome.Sharp.IconButton btnPhong;
+		private FontAwesome.Sharp.IconButton btnNhanVien;
 		private FontAwesome.Sharp.IconButton btnKhachHang;
 		private System.Windows.Forms.PictureBox btnHome;
 		private System.Windows.Forms.Panel panelShadow1;
