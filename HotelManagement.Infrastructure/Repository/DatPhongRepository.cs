@@ -20,5 +20,16 @@ namespace HotelManagement.Infrastructure.Repository
 		{
 			_context.DatPhong.Update(datPhong);
 		}
+
+		public bool CheckBookingIDExist(int bookingID)
+		{
+			return _context.DatPhong.Any(x => x.BookingID == bookingID);
+		}
+
+		public string getCustomerName(int bookingID)
+		{
+			int customerID = _context.DatPhong.Where(x => x.BookingID == bookingID).Select(x => x.CustomerID).FirstOrDefault();
+			return _context.TaiKhoan.Where(x=>x.AccountID == customerID).Select(x=>x.UserName).FirstOrDefault();
+		}
 	}
 }

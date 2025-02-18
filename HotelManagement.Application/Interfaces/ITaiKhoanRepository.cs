@@ -14,5 +14,7 @@ namespace HotelManagement.Application.Interfaces
 		TaiKhoan FindByPhone(string phone);
 		List<TaiKhoan> GetAllCustomers();
 		List<TaiKhoan> GetAllEmployees();
+		int getIDByName(string name);
+		bool checkCustomerExist(int ID);
 	}
 }

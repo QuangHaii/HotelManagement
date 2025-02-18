@@ -16,6 +16,12 @@ namespace HotelManagement.Infrastructure.Repository
 		{
 			_context = context;
 		}
+
+		public int GetServiceTypeID(string name)
+		{
+			return _context.LoaiDichVu.Where(x => x.RoomServiceName == name).Select(x => x.RoomServiceID).FirstOrDefault();
+		}
+
 		public void Update(LoaiDichVu loaiDichVu)
 		{
 			_context.LoaiDichVu.Update(loaiDichVu);

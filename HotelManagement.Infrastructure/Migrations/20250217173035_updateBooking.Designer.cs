@@ -4,6 +4,7 @@ using HotelManagement.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelManagement.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250217173035_updateBooking")]
+    partial class updateBooking
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,9 +49,6 @@ namespace HotelManagement.Infrastructure.Migrations
                     b.Property<int>("CustomerID")
                         .HasColumnType("int");
 
-                    b.Property<int>("NumberOfGuest")
-                        .HasColumnType("int");
-
                     b.Property<int>("RoomID")
                         .HasColumnType("int");
 
@@ -69,7 +69,6 @@ namespace HotelManagement.Infrastructure.Migrations
                             CheckOutDate = new DateTime(2024, 1, 18, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedDate = new DateTime(2024, 1, 14, 14, 30, 0, 0, DateTimeKind.Unspecified),
                             CustomerID = 3,
-                            NumberOfGuest = 1,
                             RoomID = 102
                         },
                         new
@@ -80,7 +79,6 @@ namespace HotelManagement.Infrastructure.Migrations
                             CheckOutDate = new DateTime(2023, 6, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedDate = new DateTime(2023, 6, 6, 16, 0, 0, 0, DateTimeKind.Unspecified),
                             CustomerID = 4,
-                            NumberOfGuest = 2,
                             RoomID = 103
                         },
                         new
@@ -91,7 +89,6 @@ namespace HotelManagement.Infrastructure.Migrations
                             CheckOutDate = new DateTime(2023, 6, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedDate = new DateTime(2023, 6, 6, 16, 0, 0, 0, DateTimeKind.Unspecified),
                             CustomerID = 5,
-                            NumberOfGuest = 3,
                             RoomID = 104
                         });
                 });
@@ -568,7 +565,7 @@ namespace HotelManagement.Infrastructure.Migrations
                             Description = "Thanh toán qua thẻ tín dụng",
                             PaymentDate = new DateTime(2024, 1, 18, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Credit Card",
-                            PaymentStatus = "Thành công!",
+                            PaymentStatus = "Successful",
                             Total = 2000000m
                         },
                         new
@@ -578,7 +575,7 @@ namespace HotelManagement.Infrastructure.Migrations
                             Description = "Thanh toán tiền mặt khi trả phòng",
                             PaymentDate = new DateTime(2023, 6, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             PaymentMethod = "Cash",
-                            PaymentStatus = "Chưa thanh toán",
+                            PaymentStatus = "Pending",
                             Total = 1500000m
                         });
                 });

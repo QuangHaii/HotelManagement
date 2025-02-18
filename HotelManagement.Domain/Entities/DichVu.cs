@@ -21,5 +21,6 @@ namespace HotelManagement.Domain.Entities
 		public int RoomServiceID { get; set; }
 		public virtual LoaiDichVu LoaiDichVu { get; set; }
 		public DateTime CreatedDate { get; set; }
+		public string Description { get; set; }
 	}
 }

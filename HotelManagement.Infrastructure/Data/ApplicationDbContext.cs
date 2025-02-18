@@ -245,10 +245,11 @@ namespace HotelManagement.Infrastructure.Data
 					// Check-in: Jan 15, 2024 | Check-out: Jan 18, 2024
 					CheckInDate = new DateTime(2024, 1, 15, 14, 30, 0),
 					CheckOutDate = new DateTime(2024, 1, 18, 11, 0, 0),
-					BookingStatus = "Completed",
+					BookingStatus = "Hoàn thành",
 					CreatedDate = new DateTime(2024, 1, 14, 14, 30, 0),
 					RoomID = 102,
-					CustomerID = 3
+					CustomerID = 3,
+					NumberOfGuest = 1,
 				},
 				new DatPhong
 				{
@@ -256,10 +257,23 @@ namespace HotelManagement.Infrastructure.Data
 					// Check-in: June 7, 2023 | Check-out: June 10, 2023
 					CheckInDate = new DateTime(2023, 6, 7, 16, 0, 0),
 					CheckOutDate = new DateTime(2023, 6, 10, 10, 0, 0),
-					BookingStatus = "Ongoing",
+					BookingStatus = "Đã đặt",
 					CreatedDate = new DateTime(2023, 6, 6, 16, 0, 0),
 					RoomID = 103,
-					CustomerID = 4
+					CustomerID = 4,
+					NumberOfGuest = 2,
+				},
+				new DatPhong
+				{
+					BookingID = 3,
+					// Check-in: June 7, 2023 | Check-out: June 10, 2023
+					CheckInDate = new DateTime(2023, 6, 7, 16, 0, 0),
+					CheckOutDate = new DateTime(2023, 6, 10, 10, 0, 0),
+					BookingStatus = "Đã đặt",
+					CreatedDate = new DateTime(2023, 6, 6, 16, 0, 0),
+					RoomID = 104,
+					CustomerID = 5,
+					NumberOfGuest = 3
 				}
 			);
 
@@ -269,28 +283,32 @@ namespace HotelManagement.Infrastructure.Data
 					ServiceID = 1,
 					BookingID = 1,
 					RoomServiceID = 1,
-					CreatedDate = new DateTime(2024, 1, 15, 14, 30, 0)
+					CreatedDate = new DateTime(2024, 1, 15, 14, 30, 0),
+					Description = "Hello World!222"
 				},
 				new DichVu
 				{
 					ServiceID = 2,
 					BookingID = 1,
 					RoomServiceID = 2,
-					CreatedDate = new DateTime(2024, 1, 15, 14, 30, 0)
+					CreatedDate = new DateTime(2024, 1, 15, 14, 30, 0),
+					Description = "Hello World!111"
 				},
 				new DichVu
 				{
 					ServiceID = 3,
 					BookingID = 2,
 					RoomServiceID = 1,
-					CreatedDate = new DateTime(2023, 6, 7, 16, 0, 0)
+					CreatedDate = new DateTime(2023, 6, 7, 16, 0, 0),
+					Description = "Hello World!123"
 				},
 				new DichVu
 				{
 					ServiceID = 4,
 					BookingID = 2,
 					RoomServiceID = 3,
-					CreatedDate = new DateTime(2023, 6, 7, 16, 0, 0)
+					CreatedDate = new DateTime(2023, 6, 7, 16, 0, 0),
+					Description = "Hello World!456"
 				}
 			);
 
@@ -300,18 +318,18 @@ namespace HotelManagement.Infrastructure.Data
 					 PaymentID = 1,
 					 Total = 2_000_000m,
 					 PaymentDate = new DateTime(2024, 1, 18, 11, 0, 0),
-					 PaymentMethod = "Credit Card",
-					 PaymentStatus = "Successful",
+					 PaymentMethod = "Chuyển khoản",
+					 PaymentStatus = "Đã thanh toán",
 					 Description = "Thanh toán qua thẻ tín dụng",
-					 BookingID = 1
+					 BookingID = 1,
 				 },
 				new ThanhToan
 				{
 					PaymentID = 2,
 					Total = 1_500_000m,
 					PaymentDate = new DateTime(2023, 6, 10, 10, 0, 0),
-					PaymentMethod = "Cash",
-					PaymentStatus = "Pending",
+					PaymentMethod = "Tiền mặt",
+					PaymentStatus = "Chưa thanh toán",
 					Description = "Thanh toán tiền mặt khi trả phòng",
 					BookingID = 2
 				}

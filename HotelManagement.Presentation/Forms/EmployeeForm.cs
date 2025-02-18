@@ -194,10 +194,14 @@ namespace HotelManagement.Presentation.Forms
 			int ID = GetIDFromTable();
 			if (ID == -1)
 				return;
-			_unitOfWork.TaiKhoanRepository.Remove(ID);
-			_unitOfWork.Save();
-			refreshList();
-			MessageBox.Show("Xóa thành công!");
+			DialogResult result = MessageBox.Show("Bạn có muốn xóa ID: " + ID + " ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (result == DialogResult.Yes)
+			{
+				MessageBox.Show("Xóa thành công!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				_unitOfWork.TaiKhoanRepository.Remove(ID);
+				_unitOfWork.Save();
+				refreshList();
+			}
 		}
 		private void btnSearch_Click(object sender, EventArgs e)
 		{

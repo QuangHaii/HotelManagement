@@ -15,6 +15,7 @@ namespace HotelManagement.Domain.Entities
 		public int BookingID { get; set; }
 		public DateTime CheckInDate { get; set; }
 		public DateTime CheckOutDate { get; set; }
+		public int NumberOfGuest { get; set; }
 		public string BookingStatus { get; set; }
 		public DateTime CreatedDate { get; set; }
 		[ForeignKey("Phong")]

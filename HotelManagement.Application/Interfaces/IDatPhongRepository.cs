@@ -10,5 +10,7 @@ namespace HotelManagement.Application.Interfaces
 	public interface IDatPhongRepository : IRepository<DatPhong>
 	{
 		void Update(DatPhong datPhong);
+		bool CheckBookingIDExist(int bookingID);
+		string getCustomerName(int bookingID);
 	}
 }

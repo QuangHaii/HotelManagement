@@ -10,5 +10,7 @@ namespace HotelManagement.Application.Interfaces
 	public interface IDichVuRepository : IRepository<DichVu>
 	{
 		void Update(DichVu dichVu);
+		List<Tuple<string, decimal, DateTime, string>> GetServiceListByBookingID(int bookingID);
+		decimal totalServicePrice(int bookingID);
 	}
 }

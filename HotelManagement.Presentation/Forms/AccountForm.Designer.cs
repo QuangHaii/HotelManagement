@@ -1,6 +1,6 @@
 ﻿namespace HotelManagement.Presentation.Forms
 {
-	partial class RoomForm
+	partial class AccountForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -32,10 +32,6 @@
 			DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
 			DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
 			DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-			DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-			DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-			DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-			DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
 			panelTop = new TableLayoutPanel();
 			btnSearch = new FontAwesome.Sharp.IconButton();
 			txtSearchBox = new CustomControl.CustomTextBox();
@@ -46,16 +42,26 @@
 			btnDelete = new FontAwesome.Sharp.IconButton();
 			panelSide = new Panel();
 			tableLayoutPanel2 = new TableLayoutPanel();
-			cbRoomType = new ComboBox();
-			label5 = new Label();
+			cbStatus = new ComboBox();
+			label9 = new Label();
 			label2 = new Label();
 			lblSidePanel = new Label();
 			iconCustomer = new FontAwesome.Sharp.IconPictureBox();
-			txtFloor = new CustomControl.CustomTextBox();
+			txtAddress = new CustomControl.CustomTextBox();
+			txtPhone = new CustomControl.CustomTextBox();
+			txtEmail = new CustomControl.CustomTextBox();
+			txtLastName = new CustomControl.CustomTextBox();
+			radioNu = new RadioButton();
+			radioKhac = new RadioButton();
 			label3 = new Label();
 			label4 = new Label();
-			txtRoomNum = new CustomControl.CustomTextBox();
-			cbRoomStatus = new ComboBox();
+			label5 = new Label();
+			txtFirstName = new CustomControl.CustomTextBox();
+			label6 = new Label();
+			label7 = new Label();
+			label8 = new Label();
+			radioNam = new RadioButton();
+			cbRole = new ComboBox();
 			panel3 = new Panel();
 			btnCancel = new FontAwesome.Sharp.IconButton();
 			btnAccept = new FontAwesome.Sharp.IconButton();
@@ -63,9 +69,6 @@
 			panelShadow2 = new Panel();
 			panelShadow = new Panel();
 			panelGrid = new Panel();
-			panelSub = new Panel();
-			dataGridView2 = new DataGridView();
-			panel1 = new Panel();
 			dataGridView1 = new DataGridView();
 			panelTop.SuspendLayout();
 			panelSide.SuspendLayout();
@@ -73,8 +76,6 @@
 			((System.ComponentModel.ISupportInitialize)iconCustomer).BeginInit();
 			panel3.SuspendLayout();
 			panelGrid.SuspendLayout();
-			panelSub.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
 			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
 			SuspendLayout();
 			// 
@@ -176,7 +177,7 @@
 			label1.Name = "label1";
 			label1.Size = new Size(153, 56);
 			label1.TabIndex = 1;
-			label1.Text = "Tìm phòng :";
+			label1.Text = "Tìm tài khoản :";
 			label1.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// btnAdd
@@ -260,16 +261,26 @@
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-			tableLayoutPanel2.Controls.Add(cbRoomType, 1, 10);
-			tableLayoutPanel2.Controls.Add(label5, 1, 9);
-			tableLayoutPanel2.Controls.Add(label2, 1, 6);
+			tableLayoutPanel2.Controls.Add(cbStatus, 2, 14);
+			tableLayoutPanel2.Controls.Add(label9, 2, 13);
+			tableLayoutPanel2.Controls.Add(label2, 0, 13);
 			tableLayoutPanel2.Controls.Add(lblSidePanel, 1, 0);
 			tableLayoutPanel2.Controls.Add(iconCustomer, 0, 0);
-			tableLayoutPanel2.Controls.Add(txtFloor, 2, 4);
-			tableLayoutPanel2.Controls.Add(label3, 1, 2);
-			tableLayoutPanel2.Controls.Add(label4, 1, 4);
-			tableLayoutPanel2.Controls.Add(txtRoomNum, 2, 2);
-			tableLayoutPanel2.Controls.Add(cbRoomStatus, 1, 7);
+			tableLayoutPanel2.Controls.Add(txtAddress, 0, 12);
+			tableLayoutPanel2.Controls.Add(txtPhone, 0, 10);
+			tableLayoutPanel2.Controls.Add(txtEmail, 0, 8);
+			tableLayoutPanel2.Controls.Add(txtLastName, 0, 5);
+			tableLayoutPanel2.Controls.Add(radioNu, 2, 6);
+			tableLayoutPanel2.Controls.Add(radioKhac, 3, 6);
+			tableLayoutPanel2.Controls.Add(label3, 0, 2);
+			tableLayoutPanel2.Controls.Add(label4, 0, 4);
+			tableLayoutPanel2.Controls.Add(label5, 0, 6);
+			tableLayoutPanel2.Controls.Add(txtFirstName, 0, 3);
+			tableLayoutPanel2.Controls.Add(label6, 0, 7);
+			tableLayoutPanel2.Controls.Add(label7, 0, 9);
+			tableLayoutPanel2.Controls.Add(label8, 0, 11);
+			tableLayoutPanel2.Controls.Add(radioNam, 1, 6);
+			tableLayoutPanel2.Controls.Add(cbRole, 0, 14);
 			tableLayoutPanel2.Dock = DockStyle.Fill;
 			tableLayoutPanel2.Location = new Point(5, 5);
 			tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -293,29 +304,27 @@
 			tableLayoutPanel2.Size = new Size(295, 480);
 			tableLayoutPanel2.TabIndex = 4;
 			// 
-			// cbRoomType
+			// cbStatus
 			// 
-			tableLayoutPanel2.SetColumnSpan(cbRoomType, 2);
-			cbRoomType.Dock = DockStyle.Fill;
-			cbRoomType.FormattingEnabled = true;
-			cbRoomType.Location = new Point(76, 303);
-			cbRoomType.Name = "cbRoomType";
-			cbRoomType.Size = new Size(140, 23);
-			cbRoomType.TabIndex = 38;
+			tableLayoutPanel2.SetColumnSpan(cbStatus, 2);
+			cbStatus.FormattingEnabled = true;
+			cbStatus.Location = new Point(149, 423);
+			cbStatus.Name = "cbStatus";
+			cbStatus.Size = new Size(121, 23);
+			cbStatus.TabIndex = 38;
 			// 
-			// label5
+			// label9
 			// 
-			label5.AutoSize = true;
-			tableLayoutPanel2.SetColumnSpan(label5, 2);
-			label5.Dock = DockStyle.Bottom;
-			label5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic);
-			label5.ForeColor = Color.White;
-			label5.Location = new Point(76, 281);
-			label5.Name = "label5";
-			label5.Size = new Size(140, 19);
-			label5.TabIndex = 37;
-			label5.Text = "Loại Phòng :";
-			label5.TextAlign = ContentAlignment.MiddleCenter;
+			label9.AutoSize = true;
+			tableLayoutPanel2.SetColumnSpan(label9, 2);
+			label9.Dock = DockStyle.Bottom;
+			label9.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic);
+			label9.ForeColor = Color.White;
+			label9.Location = new Point(149, 401);
+			label9.Name = "label9";
+			label9.Size = new Size(143, 19);
+			label9.TabIndex = 36;
+			label9.Text = "Trạng thái:";
 			// 
 			// label2
 			// 
@@ -324,12 +333,11 @@
 			label2.Dock = DockStyle.Bottom;
 			label2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic);
 			label2.ForeColor = Color.White;
-			label2.Location = new Point(76, 191);
+			label2.Location = new Point(3, 401);
 			label2.Name = "label2";
 			label2.Size = new Size(140, 19);
 			label2.TabIndex = 35;
-			label2.Text = "Trạng Thái Phòng :";
-			label2.TextAlign = ContentAlignment.MiddleCenter;
+			label2.Text = "Phân quyền:";
 			// 
 			// lblSidePanel
 			// 
@@ -343,7 +351,7 @@
 			tableLayoutPanel2.SetRowSpan(lblSidePanel, 2);
 			lblSidePanel.Size = new Size(216, 60);
 			lblSidePanel.TabIndex = 4;
-			lblSidePanel.Text = "Thông Tin Phòng";
+			lblSidePanel.Text = "Thông Tin Tài Khoản";
 			lblSidePanel.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// iconCustomer
@@ -361,83 +369,247 @@
 			iconCustomer.TabIndex = 34;
 			iconCustomer.TabStop = false;
 			// 
-			// txtFloor
+			// txtAddress
 			// 
-			txtFloor.BackColor = SystemColors.Window;
-			txtFloor.BackgroundColor = SystemColors.Window;
-			txtFloor.BorderColor = Color.FromArgb(74, 144, 226);
-			txtFloor.BorderFocusColor = Color.FromArgb(78, 205, 196);
-			txtFloor.BorderRadius = 10;
-			txtFloor.BorderSize = 2;
-			txtFloor.Dock = DockStyle.Fill;
-			txtFloor.Font = new Font("Segoe UI", 9.5F);
-			txtFloor.ForeColor = SystemColors.GradientActiveCaption;
-			txtFloor.Location = new Point(150, 124);
-			txtFloor.Margin = new Padding(4);
-			txtFloor.Name = "txtFloor";
-			txtFloor.Padding = new Padding(7);
-			txtFloor.PassWordChar1 = false;
-			txtFloor.Size = new Size(65, 32);
-			txtFloor.TabIndex = 30;
-			txtFloor.TextColor = SystemColors.WindowText;
-			txtFloor.TextString = "";
-			txtFloor.UnderlinedStyle = false;
+			txtAddress.BackColor = SystemColors.Window;
+			txtAddress.BackgroundColor = SystemColors.Window;
+			txtAddress.BorderColor = Color.FromArgb(74, 144, 226);
+			txtAddress.BorderFocusColor = Color.FromArgb(78, 205, 196);
+			txtAddress.BorderRadius = 10;
+			txtAddress.BorderSize = 2;
+			tableLayoutPanel2.SetColumnSpan(txtAddress, 4);
+			txtAddress.Dock = DockStyle.Fill;
+			txtAddress.Font = new Font("Segoe UI", 9.5F);
+			txtAddress.ForeColor = SystemColors.GradientActiveCaption;
+			txtAddress.Location = new Point(4, 364);
+			txtAddress.Margin = new Padding(4);
+			txtAddress.Name = "txtAddress";
+			txtAddress.Padding = new Padding(7);
+			txtAddress.PassWordChar1 = false;
+			txtAddress.Size = new Size(287, 32);
+			txtAddress.TabIndex = 33;
+			txtAddress.TextColor = SystemColors.WindowText;
+			txtAddress.TextString = "";
+			txtAddress.UnderlinedStyle = false;
+			// 
+			// txtPhone
+			// 
+			txtPhone.BackColor = SystemColors.Window;
+			txtPhone.BackgroundColor = SystemColors.Window;
+			txtPhone.BorderColor = Color.FromArgb(74, 144, 226);
+			txtPhone.BorderFocusColor = Color.FromArgb(78, 205, 196);
+			txtPhone.BorderRadius = 10;
+			txtPhone.BorderSize = 2;
+			tableLayoutPanel2.SetColumnSpan(txtPhone, 4);
+			txtPhone.Dock = DockStyle.Fill;
+			txtPhone.Font = new Font("Segoe UI", 9.5F);
+			txtPhone.ForeColor = SystemColors.GradientActiveCaption;
+			txtPhone.Location = new Point(4, 304);
+			txtPhone.Margin = new Padding(4);
+			txtPhone.Name = "txtPhone";
+			txtPhone.Padding = new Padding(7);
+			txtPhone.PassWordChar1 = false;
+			txtPhone.Size = new Size(287, 32);
+			txtPhone.TabIndex = 32;
+			txtPhone.TextColor = SystemColors.WindowText;
+			txtPhone.TextString = "";
+			txtPhone.UnderlinedStyle = false;
+			// 
+			// txtEmail
+			// 
+			txtEmail.BackColor = SystemColors.Window;
+			txtEmail.BackgroundColor = SystemColors.Window;
+			txtEmail.BorderColor = Color.FromArgb(74, 144, 226);
+			txtEmail.BorderFocusColor = Color.FromArgb(78, 205, 196);
+			txtEmail.BorderRadius = 10;
+			txtEmail.BorderSize = 2;
+			tableLayoutPanel2.SetColumnSpan(txtEmail, 4);
+			txtEmail.Dock = DockStyle.Fill;
+			txtEmail.Font = new Font("Segoe UI", 9.5F);
+			txtEmail.ForeColor = SystemColors.GradientActiveCaption;
+			txtEmail.Location = new Point(4, 244);
+			txtEmail.Margin = new Padding(4);
+			txtEmail.Name = "txtEmail";
+			txtEmail.Padding = new Padding(7);
+			txtEmail.PassWordChar1 = false;
+			txtEmail.Size = new Size(287, 32);
+			txtEmail.TabIndex = 31;
+			txtEmail.TextColor = SystemColors.WindowText;
+			txtEmail.TextString = "";
+			txtEmail.UnderlinedStyle = false;
+			// 
+			// txtLastName
+			// 
+			txtLastName.BackColor = SystemColors.Window;
+			txtLastName.BackgroundColor = SystemColors.Window;
+			txtLastName.BorderColor = Color.FromArgb(74, 144, 226);
+			txtLastName.BorderFocusColor = Color.FromArgb(78, 205, 196);
+			txtLastName.BorderRadius = 10;
+			txtLastName.BorderSize = 2;
+			tableLayoutPanel2.SetColumnSpan(txtLastName, 4);
+			txtLastName.Dock = DockStyle.Fill;
+			txtLastName.Font = new Font("Segoe UI", 9.5F);
+			txtLastName.ForeColor = SystemColors.GradientActiveCaption;
+			txtLastName.Location = new Point(4, 154);
+			txtLastName.Margin = new Padding(4);
+			txtLastName.Name = "txtLastName";
+			txtLastName.Padding = new Padding(7);
+			txtLastName.PassWordChar1 = false;
+			txtLastName.Size = new Size(287, 32);
+			txtLastName.TabIndex = 30;
+			txtLastName.TextColor = SystemColors.WindowText;
+			txtLastName.TextString = "";
+			txtLastName.UnderlinedStyle = false;
+			// 
+			// radioNu
+			// 
+			radioNu.AutoSize = true;
+			radioNu.Dock = DockStyle.Bottom;
+			radioNu.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			radioNu.ForeColor = Color.White;
+			radioNu.Location = new Point(149, 186);
+			radioNu.Name = "radioNu";
+			radioNu.Size = new Size(67, 21);
+			radioNu.TabIndex = 29;
+			radioNu.Text = "Nữ";
+			radioNu.UseVisualStyleBackColor = true;
+			// 
+			// radioKhac
+			// 
+			radioKhac.AutoSize = true;
+			radioKhac.Checked = true;
+			radioKhac.Dock = DockStyle.Bottom;
+			radioKhac.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			radioKhac.ForeColor = Color.White;
+			radioKhac.Location = new Point(222, 186);
+			radioKhac.Name = "radioKhac";
+			radioKhac.Size = new Size(70, 21);
+			radioKhac.TabIndex = 28;
+			radioKhac.TabStop = true;
+			radioKhac.Text = "Khác";
+			radioKhac.UseVisualStyleBackColor = true;
 			// 
 			// label3
 			// 
 			label3.AutoSize = true;
+			tableLayoutPanel2.SetColumnSpan(label3, 2);
 			label3.Dock = DockStyle.Bottom;
 			label3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic);
 			label3.ForeColor = Color.White;
-			label3.Location = new Point(76, 71);
+			label3.Location = new Point(3, 71);
 			label3.Name = "label3";
-			label3.Size = new Size(67, 19);
+			label3.Size = new Size(140, 19);
 			label3.TabIndex = 1;
-			label3.Text = "SốPhòng";
+			label3.Text = "Tên khách hàng :";
 			// 
 			// label4
 			// 
 			label4.AutoSize = true;
+			tableLayoutPanel2.SetColumnSpan(label4, 4);
 			label4.Dock = DockStyle.Bottom;
 			label4.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic);
 			label4.ForeColor = Color.White;
-			label4.Location = new Point(76, 131);
+			label4.Location = new Point(3, 131);
 			label4.Name = "label4";
-			label4.Size = new Size(67, 19);
+			label4.Size = new Size(289, 19);
 			label4.TabIndex = 3;
-			label4.Text = "Số Tầng";
+			label4.Text = "Họ và tên đệm :";
 			// 
-			// txtRoomNum
+			// label5
 			// 
-			txtRoomNum.BackColor = SystemColors.Window;
-			txtRoomNum.BackgroundColor = SystemColors.Window;
-			txtRoomNum.BorderColor = Color.FromArgb(74, 144, 226);
-			txtRoomNum.BorderFocusColor = Color.FromArgb(78, 205, 196);
-			txtRoomNum.BorderRadius = 10;
-			txtRoomNum.BorderSize = 2;
-			txtRoomNum.Dock = DockStyle.Fill;
-			txtRoomNum.Font = new Font("Segoe UI", 9.5F);
-			txtRoomNum.ForeColor = SystemColors.GradientActiveCaption;
-			txtRoomNum.Location = new Point(150, 64);
-			txtRoomNum.Margin = new Padding(4);
-			txtRoomNum.Name = "txtRoomNum";
-			txtRoomNum.Padding = new Padding(7);
-			txtRoomNum.PassWordChar1 = false;
-			txtRoomNum.Size = new Size(65, 32);
-			txtRoomNum.TabIndex = 17;
-			txtRoomNum.TextColor = SystemColors.WindowText;
-			txtRoomNum.TextString = "";
-			txtRoomNum.UnderlinedStyle = false;
+			label5.AutoSize = true;
+			label5.Dock = DockStyle.Bottom;
+			label5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic);
+			label5.ForeColor = Color.White;
+			label5.Location = new Point(3, 191);
+			label5.Name = "label5";
+			label5.Size = new Size(67, 19);
+			label5.TabIndex = 16;
+			label5.Text = "Giới tính:";
 			// 
-			// cbRoomStatus
+			// txtFirstName
 			// 
-			tableLayoutPanel2.SetColumnSpan(cbRoomStatus, 2);
-			cbRoomStatus.Dock = DockStyle.Fill;
-			cbRoomStatus.FormattingEnabled = true;
-			cbRoomStatus.Location = new Point(76, 213);
-			cbRoomStatus.Name = "cbRoomStatus";
-			cbRoomStatus.Size = new Size(140, 23);
-			cbRoomStatus.TabIndex = 36;
+			txtFirstName.BackColor = SystemColors.Window;
+			txtFirstName.BackgroundColor = SystemColors.Window;
+			txtFirstName.BorderColor = Color.FromArgb(74, 144, 226);
+			txtFirstName.BorderFocusColor = Color.FromArgb(78, 205, 196);
+			txtFirstName.BorderRadius = 10;
+			txtFirstName.BorderSize = 2;
+			tableLayoutPanel2.SetColumnSpan(txtFirstName, 4);
+			txtFirstName.Dock = DockStyle.Fill;
+			txtFirstName.Font = new Font("Segoe UI", 9.5F);
+			txtFirstName.ForeColor = SystemColors.GradientActiveCaption;
+			txtFirstName.Location = new Point(4, 94);
+			txtFirstName.Margin = new Padding(4);
+			txtFirstName.Name = "txtFirstName";
+			txtFirstName.Padding = new Padding(7);
+			txtFirstName.PassWordChar1 = false;
+			txtFirstName.Size = new Size(287, 32);
+			txtFirstName.TabIndex = 17;
+			txtFirstName.TextColor = SystemColors.WindowText;
+			txtFirstName.TextString = "";
+			txtFirstName.UnderlinedStyle = false;
+			// 
+			// label6
+			// 
+			label6.AutoSize = true;
+			tableLayoutPanel2.SetColumnSpan(label6, 4);
+			label6.Dock = DockStyle.Bottom;
+			label6.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic);
+			label6.ForeColor = Color.White;
+			label6.Location = new Point(3, 221);
+			label6.Name = "label6";
+			label6.Size = new Size(289, 19);
+			label6.TabIndex = 20;
+			label6.Text = "Email :";
+			// 
+			// label7
+			// 
+			label7.AutoSize = true;
+			tableLayoutPanel2.SetColumnSpan(label7, 4);
+			label7.Dock = DockStyle.Bottom;
+			label7.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic);
+			label7.ForeColor = Color.White;
+			label7.Location = new Point(3, 281);
+			label7.Name = "label7";
+			label7.Size = new Size(289, 19);
+			label7.TabIndex = 21;
+			label7.Text = "Số điện thoại :";
+			// 
+			// label8
+			// 
+			label8.AutoSize = true;
+			tableLayoutPanel2.SetColumnSpan(label8, 4);
+			label8.Dock = DockStyle.Bottom;
+			label8.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic);
+			label8.ForeColor = Color.White;
+			label8.Location = new Point(3, 341);
+			label8.Name = "label8";
+			label8.Size = new Size(289, 19);
+			label8.TabIndex = 22;
+			label8.Text = "Địa chỉ :";
+			// 
+			// radioNam
+			// 
+			radioNam.AutoSize = true;
+			radioNam.Dock = DockStyle.Bottom;
+			radioNam.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			radioNam.ForeColor = Color.White;
+			radioNam.Location = new Point(76, 186);
+			radioNam.Name = "radioNam";
+			radioNam.Size = new Size(67, 21);
+			radioNam.TabIndex = 27;
+			radioNam.Text = "Nam";
+			radioNam.UseVisualStyleBackColor = true;
+			// 
+			// cbRole
+			// 
+			tableLayoutPanel2.SetColumnSpan(cbRole, 2);
+			cbRole.FormattingEnabled = true;
+			cbRole.Location = new Point(3, 423);
+			cbRole.Name = "cbRole";
+			cbRole.Size = new Size(121, 23);
+			cbRole.TabIndex = 37;
 			// 
 			// panel3
 			// 
@@ -518,90 +690,12 @@
 			// 
 			// panelGrid
 			// 
-			panelGrid.Controls.Add(panelSub);
 			panelGrid.Controls.Add(dataGridView1);
 			panelGrid.Dock = DockStyle.Fill;
 			panelGrid.Location = new Point(0, 60);
 			panelGrid.Name = "panelGrid";
 			panelGrid.Size = new Size(500, 540);
 			panelGrid.TabIndex = 2;
-			// 
-			// panelSub
-			// 
-			panelSub.Controls.Add(dataGridView2);
-			panelSub.Controls.Add(panel1);
-			panelSub.Dock = DockStyle.Bottom;
-			panelSub.Location = new Point(0, 390);
-			panelSub.Name = "panelSub";
-			panelSub.Size = new Size(500, 150);
-			panelSub.TabIndex = 1;
-			// 
-			// dataGridView2
-			// 
-			dataGridView2.AllowUserToDeleteRows = false;
-			dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-			dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-			dataGridView2.BackgroundColor = Color.FromArgb(14, 36, 66);
-			dataGridView2.BorderStyle = BorderStyle.None;
-			dataGridView2.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-			dataGridView2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.BottomCenter;
-			dataGridViewCellStyle1.BackColor = Color.FromArgb(14, 36, 66);
-			dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-			dataGridViewCellStyle1.ForeColor = Color.FromArgb(74, 144, 226);
-			dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(14, 36, 66);
-			dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(74, 144, 226);
-			dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-			dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-			dataGridView2.ColumnHeadersHeight = 50;
-			dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-			dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.BottomCenter;
-			dataGridViewCellStyle2.BackColor = SystemColors.Window;
-			dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-			dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-			dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-			dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-			dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
-			dataGridView2.Dock = DockStyle.Fill;
-			dataGridView2.EnableHeadersVisualStyles = false;
-			dataGridView2.GridColor = Color.FromArgb(74, 144, 226);
-			dataGridView2.Location = new Point(0, 5);
-			dataGridView2.MultiSelect = false;
-			dataGridView2.Name = "dataGridView2";
-			dataGridView2.ReadOnly = true;
-			dataGridView2.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.BottomCenter;
-			dataGridViewCellStyle3.BackColor = Color.FromArgb(14, 36, 66);
-			dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			dataGridViewCellStyle3.ForeColor = Color.White;
-			dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-			dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-			dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-			dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-			dataGridView2.RowHeadersWidth = 40;
-			dataGridView2.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-			dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.BottomCenter;
-			dataGridViewCellStyle4.BackColor = Color.FromArgb(14, 36, 66);
-			dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			dataGridViewCellStyle4.ForeColor = Color.White;
-			dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle4;
-			dataGridView2.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter;
-			dataGridView2.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(14, 36, 66);
-			dataGridView2.RowTemplate.DefaultCellStyle.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			dataGridView2.RowTemplate.DefaultCellStyle.ForeColor = Color.White;
-			dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			dataGridView2.Size = new Size(500, 145);
-			dataGridView2.TabIndex = 4;
-			// 
-			// panel1
-			// 
-			panel1.BackColor = Color.White;
-			panel1.Dock = DockStyle.Top;
-			panel1.Location = new Point(0, 0);
-			panel1.Name = "panel1";
-			panel1.Size = new Size(500, 5);
-			panel1.TabIndex = 3;
 			// 
 			// dataGridView1
 			// 
@@ -612,24 +706,24 @@
 			dataGridView1.BorderStyle = BorderStyle.None;
 			dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
 			dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.BottomCenter;
-			dataGridViewCellStyle5.BackColor = Color.FromArgb(14, 36, 66);
-			dataGridViewCellStyle5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-			dataGridViewCellStyle5.ForeColor = Color.FromArgb(74, 144, 226);
-			dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(14, 36, 66);
-			dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(74, 144, 226);
-			dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-			dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.BottomCenter;
+			dataGridViewCellStyle1.BackColor = Color.FromArgb(14, 36, 66);
+			dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+			dataGridViewCellStyle1.ForeColor = Color.FromArgb(74, 144, 226);
+			dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(14, 36, 66);
+			dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(74, 144, 226);
+			dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+			dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			dataGridView1.ColumnHeadersHeight = 50;
 			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-			dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.BottomCenter;
-			dataGridViewCellStyle6.BackColor = SystemColors.Window;
-			dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-			dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-			dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-			dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-			dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-			dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.BottomCenter;
+			dataGridViewCellStyle2.BackColor = SystemColors.Window;
+			dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+			dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+			dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+			dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
 			dataGridView1.Dock = DockStyle.Fill;
 			dataGridView1.EnableHeadersVisualStyles = false;
 			dataGridView1.GridColor = Color.FromArgb(74, 144, 226);
@@ -638,21 +732,21 @@
 			dataGridView1.Name = "dataGridView1";
 			dataGridView1.ReadOnly = true;
 			dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.BottomCenter;
-			dataGridViewCellStyle7.BackColor = Color.FromArgb(14, 36, 66);
-			dataGridViewCellStyle7.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			dataGridViewCellStyle7.ForeColor = Color.White;
-			dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-			dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-			dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-			dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+			dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.BottomCenter;
+			dataGridViewCellStyle3.BackColor = Color.FromArgb(14, 36, 66);
+			dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			dataGridViewCellStyle3.ForeColor = Color.White;
+			dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+			dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+			dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+			dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
 			dataGridView1.RowHeadersWidth = 40;
 			dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-			dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.BottomCenter;
-			dataGridViewCellStyle8.BackColor = Color.FromArgb(14, 36, 66);
-			dataGridViewCellStyle8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			dataGridViewCellStyle8.ForeColor = Color.White;
-			dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
+			dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.BottomCenter;
+			dataGridViewCellStyle4.BackColor = Color.FromArgb(14, 36, 66);
+			dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			dataGridViewCellStyle4.ForeColor = Color.White;
+			dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
 			dataGridView1.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter;
 			dataGridView1.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(14, 36, 66);
 			dataGridView1.RowTemplate.DefaultCellStyle.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -661,7 +755,7 @@
 			dataGridView1.Size = new Size(500, 540);
 			dataGridView1.TabIndex = 0;
 			// 
-			// RoomForm
+			// AccountForm
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
@@ -670,7 +764,7 @@
 			Controls.Add(panelSide);
 			Controls.Add(panelTop);
 			FormBorderStyle = FormBorderStyle.None;
-			Name = "RoomForm";
+			Name = "AccountForm";
 			Text = "RoleForm";
 			panelTop.ResumeLayout(false);
 			panelTop.PerformLayout();
@@ -680,8 +774,6 @@
 			((System.ComponentModel.ISupportInitialize)iconCustomer).EndInit();
 			panel3.ResumeLayout(false);
 			panelGrid.ResumeLayout(false);
-			panelSub.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
 			((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
 			ResumeLayout(false);
 		}
@@ -704,21 +796,28 @@
 		private TableLayoutPanel tableLayoutPanel2;
 		private Label label3;
 		private Label label4;
-		private CustomControl.CustomTextBox txtRoomNum;
+		private Label label5;
+		private CustomControl.CustomTextBox txtFirstName;
+		private Label label6;
+		private Label label7;
+		private Label label8;
 		private CustomControl.CustomTextBox customTextBox6;
-		private CustomControl.CustomTextBox txtFloor;
+		private RadioButton radioNam;
+		private CustomControl.CustomTextBox txtAddress;
+		private CustomControl.CustomTextBox txtPhone;
+		private CustomControl.CustomTextBox txtEmail;
+		private CustomControl.CustomTextBox txtLastName;
+		private RadioButton radioNu;
+		private RadioButton radioKhac;
 		private Label lblSidePanel;
 		private FontAwesome.Sharp.IconPictureBox iconCustomer;
 		private Panel panelGrid;
+		private DataGridView dataGridView1;
 		private CustomControl.CustomTextBox txtSearchBox;
 		private FontAwesome.Sharp.IconButton btnSearch;
+		private Label label9;
 		private Label label2;
-		private ComboBox cbRoomStatus;
-		private Label label5;
-		private ComboBox cbRoomType;
-		private DataGridView dataGridView1;
-		private Panel panelSub;
-		private DataGridView dataGridView2;
-		private Panel panel1;
+		private ComboBox cbRole;
+		private ComboBox cbStatus;
 	}
 }

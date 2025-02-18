@@ -33,7 +33,7 @@ namespace HotelManagement.Presentation
 			this.DoubleBuffered = true;
 			this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 			_unitOfWork = unitOfWork;
-			if(currentUser != null)
+			if (currentUser != null)
 			{
 				_currentUser = currentUser;
 				txtName.Text = _currentUser.UserName;
@@ -94,13 +94,6 @@ namespace HotelManagement.Presentation
 			childForm.Show();
 		}
 
-		private void btnTrangChu_Click(object sender, EventArgs e)
-		{
-			ActiveButton(sender);
-			//OpenChildForm(new A(_unitOfWork));
-			OpenChildForm(new Form1());
-		}
-
 		private void btnKhachHang_Click(object sender, EventArgs e)
 		{
 			ActiveButton(sender);
@@ -122,9 +115,31 @@ namespace HotelManagement.Presentation
 		private void btnHoaDon_Click(object sender, EventArgs e)
 		{
 			ActiveButton(sender);
-			OpenChildForm(new Form1());
+			OpenChildForm(new PaymentForm(_unitOfWork));
+		}
+		private void btnTaiKhoan_Click(object sender, EventArgs e)
+		{
+			ActiveButton(sender);
+			OpenChildForm(new AccountForm(_unitOfWork));
 		}
 
+		private void btnLoaiDichVu_Click(object sender, EventArgs e)
+		{
+			ActiveButton(sender);
+			OpenChildForm(new ServiceTypeForm(_unitOfWork));
+		}
+
+		private void btnDichVu_Click(object sender, EventArgs e)
+		{
+			ActiveButton(sender);
+			OpenChildForm(new ServiceForm(_unitOfWork));
+
+		}
+		private void btnDatPhong_Click(object sender, EventArgs e)
+		{
+			ActiveButton(sender);
+			OpenChildForm(new BookingForm(_unitOfWork));
+		}
 		private void btnHome_Click(object sender, EventArgs e)
 		{
 			Reset();

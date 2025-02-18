@@ -10,5 +10,6 @@ namespace HotelManagement.Application.Interfaces
 	public interface ILoaiDichVuRepository : IRepository<LoaiDichVu>
 	{
 		void Update(LoaiDichVu loaiDichVu);
+		int GetServiceTypeID(string name);
 	}
 }

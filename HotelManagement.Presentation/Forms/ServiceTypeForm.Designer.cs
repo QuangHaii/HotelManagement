@@ -1,6 +1,6 @@
 ﻿namespace HotelManagement.Presentation.Forms
 {
-	partial class RoomForm
+	partial class ServiceTypeForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -46,16 +46,14 @@
 			btnDelete = new FontAwesome.Sharp.IconButton();
 			panelSide = new Panel();
 			tableLayoutPanel2 = new TableLayoutPanel();
-			cbRoomType = new ComboBox();
+			txtDescription = new CustomControl.CustomTextBox();
 			label5 = new Label();
-			label2 = new Label();
 			lblSidePanel = new Label();
 			iconCustomer = new FontAwesome.Sharp.IconPictureBox();
-			txtFloor = new CustomControl.CustomTextBox();
+			txtPrice = new CustomControl.CustomTextBox();
 			label3 = new Label();
 			label4 = new Label();
-			txtRoomNum = new CustomControl.CustomTextBox();
-			cbRoomStatus = new ComboBox();
+			txtTypeName = new CustomControl.CustomTextBox();
 			panel3 = new Panel();
 			btnCancel = new FontAwesome.Sharp.IconButton();
 			btnAccept = new FontAwesome.Sharp.IconButton();
@@ -176,7 +174,7 @@
 			label1.Name = "label1";
 			label1.Size = new Size(153, 56);
 			label1.TabIndex = 1;
-			label1.Text = "Tìm phòng :";
+			label1.Text = "Tìm dịch vụ :";
 			label1.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// btnAdd
@@ -260,16 +258,14 @@
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-			tableLayoutPanel2.Controls.Add(cbRoomType, 1, 10);
-			tableLayoutPanel2.Controls.Add(label5, 1, 9);
-			tableLayoutPanel2.Controls.Add(label2, 1, 6);
+			tableLayoutPanel2.Controls.Add(txtDescription, 0, 10);
+			tableLayoutPanel2.Controls.Add(label5, 0, 9);
 			tableLayoutPanel2.Controls.Add(lblSidePanel, 1, 0);
 			tableLayoutPanel2.Controls.Add(iconCustomer, 0, 0);
-			tableLayoutPanel2.Controls.Add(txtFloor, 2, 4);
-			tableLayoutPanel2.Controls.Add(label3, 1, 2);
-			tableLayoutPanel2.Controls.Add(label4, 1, 4);
-			tableLayoutPanel2.Controls.Add(txtRoomNum, 2, 2);
-			tableLayoutPanel2.Controls.Add(cbRoomStatus, 1, 7);
+			tableLayoutPanel2.Controls.Add(txtPrice, 1, 7);
+			tableLayoutPanel2.Controls.Add(label3, 0, 3);
+			tableLayoutPanel2.Controls.Add(label4, 1, 6);
+			tableLayoutPanel2.Controls.Add(txtTypeName, 0, 4);
 			tableLayoutPanel2.Dock = DockStyle.Fill;
 			tableLayoutPanel2.Location = new Point(5, 5);
 			tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -293,15 +289,28 @@
 			tableLayoutPanel2.Size = new Size(295, 480);
 			tableLayoutPanel2.TabIndex = 4;
 			// 
-			// cbRoomType
+			// txtDescription
 			// 
-			tableLayoutPanel2.SetColumnSpan(cbRoomType, 2);
-			cbRoomType.Dock = DockStyle.Fill;
-			cbRoomType.FormattingEnabled = true;
-			cbRoomType.Location = new Point(76, 303);
-			cbRoomType.Name = "cbRoomType";
-			cbRoomType.Size = new Size(140, 23);
-			cbRoomType.TabIndex = 38;
+			txtDescription.BackColor = SystemColors.Window;
+			txtDescription.BackgroundColor = SystemColors.Window;
+			txtDescription.BorderColor = Color.FromArgb(74, 144, 226);
+			txtDescription.BorderFocusColor = Color.FromArgb(78, 205, 196);
+			txtDescription.BorderRadius = 10;
+			txtDescription.BorderSize = 2;
+			tableLayoutPanel2.SetColumnSpan(txtDescription, 4);
+			txtDescription.Dock = DockStyle.Fill;
+			txtDescription.Font = new Font("Segoe UI", 9.5F);
+			txtDescription.ForeColor = SystemColors.GradientActiveCaption;
+			txtDescription.Location = new Point(4, 304);
+			txtDescription.Margin = new Padding(4);
+			txtDescription.Name = "txtDescription";
+			txtDescription.Padding = new Padding(7);
+			txtDescription.PassWordChar1 = false;
+			txtDescription.Size = new Size(287, 32);
+			txtDescription.TabIndex = 38;
+			txtDescription.TextColor = SystemColors.WindowText;
+			txtDescription.TextString = "";
+			txtDescription.UnderlinedStyle = false;
 			// 
 			// label5
 			// 
@@ -310,26 +319,12 @@
 			label5.Dock = DockStyle.Bottom;
 			label5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic);
 			label5.ForeColor = Color.White;
-			label5.Location = new Point(76, 281);
+			label5.Location = new Point(3, 281);
 			label5.Name = "label5";
 			label5.Size = new Size(140, 19);
 			label5.TabIndex = 37;
-			label5.Text = "Loại Phòng :";
-			label5.TextAlign = ContentAlignment.MiddleCenter;
-			// 
-			// label2
-			// 
-			label2.AutoSize = true;
-			tableLayoutPanel2.SetColumnSpan(label2, 2);
-			label2.Dock = DockStyle.Bottom;
-			label2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic);
-			label2.ForeColor = Color.White;
-			label2.Location = new Point(76, 191);
-			label2.Name = "label2";
-			label2.Size = new Size(140, 19);
-			label2.TabIndex = 35;
-			label2.Text = "Trạng Thái Phòng :";
-			label2.TextAlign = ContentAlignment.MiddleCenter;
+			label5.Text = "Mô tả dịch vụ :";
+			label5.TextAlign = ContentAlignment.MiddleLeft;
 			// 
 			// lblSidePanel
 			// 
@@ -343,7 +338,7 @@
 			tableLayoutPanel2.SetRowSpan(lblSidePanel, 2);
 			lblSidePanel.Size = new Size(216, 60);
 			lblSidePanel.TabIndex = 4;
-			lblSidePanel.Text = "Thông Tin Phòng";
+			lblSidePanel.Text = "Thông Tin Dịch Vụ";
 			lblSidePanel.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// iconCustomer
@@ -361,83 +356,78 @@
 			iconCustomer.TabIndex = 34;
 			iconCustomer.TabStop = false;
 			// 
-			// txtFloor
+			// txtPrice
 			// 
-			txtFloor.BackColor = SystemColors.Window;
-			txtFloor.BackgroundColor = SystemColors.Window;
-			txtFloor.BorderColor = Color.FromArgb(74, 144, 226);
-			txtFloor.BorderFocusColor = Color.FromArgb(78, 205, 196);
-			txtFloor.BorderRadius = 10;
-			txtFloor.BorderSize = 2;
-			txtFloor.Dock = DockStyle.Fill;
-			txtFloor.Font = new Font("Segoe UI", 9.5F);
-			txtFloor.ForeColor = SystemColors.GradientActiveCaption;
-			txtFloor.Location = new Point(150, 124);
-			txtFloor.Margin = new Padding(4);
-			txtFloor.Name = "txtFloor";
-			txtFloor.Padding = new Padding(7);
-			txtFloor.PassWordChar1 = false;
-			txtFloor.Size = new Size(65, 32);
-			txtFloor.TabIndex = 30;
-			txtFloor.TextColor = SystemColors.WindowText;
-			txtFloor.TextString = "";
-			txtFloor.UnderlinedStyle = false;
+			txtPrice.BackColor = SystemColors.Window;
+			txtPrice.BackgroundColor = SystemColors.Window;
+			txtPrice.BorderColor = Color.FromArgb(74, 144, 226);
+			txtPrice.BorderFocusColor = Color.FromArgb(78, 205, 196);
+			txtPrice.BorderRadius = 10;
+			txtPrice.BorderSize = 2;
+			tableLayoutPanel2.SetColumnSpan(txtPrice, 2);
+			txtPrice.Dock = DockStyle.Fill;
+			txtPrice.Font = new Font("Segoe UI", 9.5F);
+			txtPrice.ForeColor = SystemColors.GradientActiveCaption;
+			txtPrice.Location = new Point(77, 214);
+			txtPrice.Margin = new Padding(4);
+			txtPrice.Name = "txtPrice";
+			txtPrice.Padding = new Padding(7);
+			txtPrice.PassWordChar1 = false;
+			txtPrice.Size = new Size(138, 32);
+			txtPrice.TabIndex = 30;
+			txtPrice.TextColor = SystemColors.WindowText;
+			txtPrice.TextString = "";
+			txtPrice.UnderlinedStyle = false;
 			// 
 			// label3
 			// 
 			label3.AutoSize = true;
+			tableLayoutPanel2.SetColumnSpan(label3, 2);
 			label3.Dock = DockStyle.Bottom;
 			label3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic);
 			label3.ForeColor = Color.White;
-			label3.Location = new Point(76, 71);
+			label3.Location = new Point(3, 101);
 			label3.Name = "label3";
-			label3.Size = new Size(67, 19);
+			label3.Size = new Size(140, 19);
 			label3.TabIndex = 1;
-			label3.Text = "SốPhòng";
+			label3.Text = "Tên Dịch Vụ :";
 			// 
 			// label4
 			// 
 			label4.AutoSize = true;
+			tableLayoutPanel2.SetColumnSpan(label4, 2);
 			label4.Dock = DockStyle.Bottom;
 			label4.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic);
 			label4.ForeColor = Color.White;
-			label4.Location = new Point(76, 131);
+			label4.Location = new Point(76, 191);
 			label4.Name = "label4";
-			label4.Size = new Size(67, 19);
+			label4.Size = new Size(140, 19);
 			label4.TabIndex = 3;
-			label4.Text = "Số Tầng";
+			label4.Text = "Giá dịch vụ";
+			label4.TextAlign = ContentAlignment.MiddleCenter;
 			// 
-			// txtRoomNum
+			// txtTypeName
 			// 
-			txtRoomNum.BackColor = SystemColors.Window;
-			txtRoomNum.BackgroundColor = SystemColors.Window;
-			txtRoomNum.BorderColor = Color.FromArgb(74, 144, 226);
-			txtRoomNum.BorderFocusColor = Color.FromArgb(78, 205, 196);
-			txtRoomNum.BorderRadius = 10;
-			txtRoomNum.BorderSize = 2;
-			txtRoomNum.Dock = DockStyle.Fill;
-			txtRoomNum.Font = new Font("Segoe UI", 9.5F);
-			txtRoomNum.ForeColor = SystemColors.GradientActiveCaption;
-			txtRoomNum.Location = new Point(150, 64);
-			txtRoomNum.Margin = new Padding(4);
-			txtRoomNum.Name = "txtRoomNum";
-			txtRoomNum.Padding = new Padding(7);
-			txtRoomNum.PassWordChar1 = false;
-			txtRoomNum.Size = new Size(65, 32);
-			txtRoomNum.TabIndex = 17;
-			txtRoomNum.TextColor = SystemColors.WindowText;
-			txtRoomNum.TextString = "";
-			txtRoomNum.UnderlinedStyle = false;
-			// 
-			// cbRoomStatus
-			// 
-			tableLayoutPanel2.SetColumnSpan(cbRoomStatus, 2);
-			cbRoomStatus.Dock = DockStyle.Fill;
-			cbRoomStatus.FormattingEnabled = true;
-			cbRoomStatus.Location = new Point(76, 213);
-			cbRoomStatus.Name = "cbRoomStatus";
-			cbRoomStatus.Size = new Size(140, 23);
-			cbRoomStatus.TabIndex = 36;
+			txtTypeName.BackColor = SystemColors.Window;
+			txtTypeName.BackgroundColor = SystemColors.Window;
+			txtTypeName.BorderColor = Color.FromArgb(74, 144, 226);
+			txtTypeName.BorderFocusColor = Color.FromArgb(78, 205, 196);
+			txtTypeName.BorderRadius = 10;
+			txtTypeName.BorderSize = 2;
+			tableLayoutPanel2.SetColumnSpan(txtTypeName, 4);
+			txtTypeName.Dock = DockStyle.Fill;
+			txtTypeName.Font = new Font("Segoe UI", 9.5F);
+			txtTypeName.ForeColor = SystemColors.GradientActiveCaption;
+			txtTypeName.Location = new Point(4, 124);
+			txtTypeName.Margin = new Padding(4);
+			txtTypeName.Name = "txtTypeName";
+			txtTypeName.Padding = new Padding(7);
+			txtTypeName.PassWordChar1 = false;
+			txtTypeName.Size = new Size(287, 32);
+			txtTypeName.TabIndex = 17;
+			txtTypeName.TextColor = SystemColors.WindowText;
+			txtTypeName.TextString = "";
+			txtTypeName.UnderlinedStyle = false;
 			// 
 			// panel3
 			// 
@@ -661,7 +651,7 @@
 			dataGridView1.Size = new Size(500, 540);
 			dataGridView1.TabIndex = 0;
 			// 
-			// RoomForm
+			// ServiceTypeForm
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
@@ -670,7 +660,7 @@
 			Controls.Add(panelSide);
 			Controls.Add(panelTop);
 			FormBorderStyle = FormBorderStyle.None;
-			Name = "RoomForm";
+			Name = "ServiceTypeForm";
 			Text = "RoleForm";
 			panelTop.ResumeLayout(false);
 			panelTop.PerformLayout();
@@ -704,21 +694,19 @@
 		private TableLayoutPanel tableLayoutPanel2;
 		private Label label3;
 		private Label label4;
-		private CustomControl.CustomTextBox txtRoomNum;
+		private CustomControl.CustomTextBox txtTypeName;
 		private CustomControl.CustomTextBox customTextBox6;
-		private CustomControl.CustomTextBox txtFloor;
+		private CustomControl.CustomTextBox txtPrice;
 		private Label lblSidePanel;
 		private FontAwesome.Sharp.IconPictureBox iconCustomer;
 		private Panel panelGrid;
 		private CustomControl.CustomTextBox txtSearchBox;
 		private FontAwesome.Sharp.IconButton btnSearch;
-		private Label label2;
-		private ComboBox cbRoomStatus;
 		private Label label5;
-		private ComboBox cbRoomType;
 		private DataGridView dataGridView1;
 		private Panel panelSub;
 		private DataGridView dataGridView2;
 		private Panel panel1;
+		private CustomControl.CustomTextBox txtDescription;
 	}
 }

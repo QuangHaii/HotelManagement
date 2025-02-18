@@ -18,6 +18,7 @@ namespace HotelManagement.Presentation.Forms
 	{
 		private readonly IUnitOfWork _unitOfWork;
 		private List<RoomDTO> _roomDTOS;
+		private List<RoomAvailabilityDTO> _roomAvailabilityDTOS;
 		private List<string> statusList = new List<string> { "Trống", "Đã đặt", "Đã nhận"};
 		private bool _isEdit = false;
 		public RoomForm(IUnitOfWork unitOfWork)
@@ -25,6 +26,7 @@ namespace HotelManagement.Presentation.Forms
 			InitializeComponent();
 			_unitOfWork = unitOfWork;
 			_roomDTOS = new List<RoomDTO>();
+			_roomAvailabilityDTOS = new List<RoomAvailabilityDTO>();
 			refreshList();
 			HidePanel();
 		}
@@ -32,6 +34,7 @@ namespace HotelManagement.Presentation.Forms
 
 		private void refreshList()
 		{
+			//Load room list from database
 			var list = _unitOfWork.PhongRepository.GetAll();
 			_roomDTOS.Clear();
 			foreach (var room in list)
@@ -39,7 +42,8 @@ namespace HotelManagement.Presentation.Forms
 				var roomType = _unitOfWork.LoaiPhongRepository.GetById(room.RoomTypeID);
 				_roomDTOS.Add(new RoomDTO()
 				{
-					ID = room.RoomID,
+					IDPhòng = room.RoomID,
+					IDLoạiPhòng = room.RoomTypeID,
 					SốPhòng = room.RoomNumber,
 					SốTầng = room.Floor,
 					TrạngThái = room.Status,
@@ -51,6 +55,22 @@ namespace HotelManagement.Presentation.Forms
 			}
 			dataGridView1.DataSource = null;
 			dataGridView1.DataSource = _roomDTOS;
+
+			//Load avaialble room list from database
+			_roomAvailabilityDTOS.Clear();
+			var roomAvailable = _unitOfWork.PhongRepository.getRoomAvailable();
+			foreach (var room in roomAvailable)
+			{
+				var roomType = _unitOfWork.LoaiPhongRepository.GetById(room.Item1);
+				_roomAvailabilityDTOS.Add(new RoomAvailabilityDTO()
+				{
+					IDLoạiPhòng = room.Item1,
+					TênLoạiPhòng = roomType.RoomTypeName,
+					PhòngCònTrống = room.Item2
+				});
+			}
+			dataGridView2.DataSource = null;
+			dataGridView2.DataSource = _roomAvailabilityDTOS;
 		}
 		private void HidePanel()
 		{
@@ -66,19 +86,16 @@ namespace HotelManagement.Presentation.Forms
 			panelSide.Width = 300;
 			panelTop.Enabled = false;
 		}
-
 		private void btnAdd_Click(object sender, EventArgs e)
 		{
 			lblSidePanel.Text = "Thêm Phòng";
 			ShowPanel();
 		}
-
 		private void btnCancel_Click(object sender, EventArgs e)
 		{
 			HidePanel();
 			_isEdit = false;
 		}
-
 		private void btnAccept_Click(object sender, EventArgs e)
 		{
 			if (txtRoomNum.TextString == "" || txtFloor.TextString == "")
@@ -86,7 +103,7 @@ namespace HotelManagement.Presentation.Forms
 				MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
 				return;
 			}
-			if (!IsValidNonNegativeInteger(txtRoomNum.TextString) || !IsValidNonNegativeInteger(txtFloor.TextString))
+			if (!IsValidRoomCode(txtRoomNum.TextString) || !IsValidNonNegativeInteger(txtFloor.TextString))
 			{
 				MessageBox.Show("Số không hợp lệ");
 				return;
@@ -127,7 +144,7 @@ namespace HotelManagement.Presentation.Forms
 			if (dataGridView1.SelectedRows.Count > 0)
 			{
 				DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-				int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+				int id = Convert.ToInt32(selectedRow.Cells["IDPhòng"].Value);
 				return id;
 			}
 			else
@@ -155,10 +172,14 @@ namespace HotelManagement.Presentation.Forms
 			int ID = GetIDFromTable();
 			if (ID == -1)
 				return;
-			_unitOfWork.PhongRepository.Remove(ID);
-			_unitOfWork.Save();
-			refreshList();
-			MessageBox.Show("Xóa thành công!");
+			DialogResult result = MessageBox.Show("Bạn có muốn xóa ID: " + ID + " ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (result == DialogResult.Yes)
+			{
+				MessageBox.Show("Xóa thành công!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				_unitOfWork.PhongRepository.Remove(ID);
+				_unitOfWork.Save();
+				refreshList();
+			}
 		}
 		private void btnSearch_Click(object sender, EventArgs e)
 		{
@@ -178,10 +199,13 @@ namespace HotelManagement.Presentation.Forms
 			dataGridView1.DataSource = null;
 			dataGridView1.DataSource = filteredList;
 		}
-
 		static bool IsValidNonNegativeInteger(string input)
 		{
 			return int.TryParse(input, out int number) && number >= 0;
+		}
+		public static bool IsValidRoomCode(string input)
+		{
+			return Regex.IsMatch(input, @"^[A-Z]\d{3}$");
 		}
 	}
 }

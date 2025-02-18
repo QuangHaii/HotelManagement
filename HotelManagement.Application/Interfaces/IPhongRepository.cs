@@ -10,5 +10,10 @@ namespace HotelManagement.Application.Interfaces
 	public interface IPhongRepository : IRepository<Phong>
 	{
 		void Update(Phong phong);
+		List<Tuple<int, int>> getRoomAvailable();
+
+		List<string> getListRoomNameByRoomType(int roomTypeID);
+		int getRoomIDByRoomNumber(string roomNumber);
+		decimal getPriceByBookingID(int bookingID);
 	}
 }

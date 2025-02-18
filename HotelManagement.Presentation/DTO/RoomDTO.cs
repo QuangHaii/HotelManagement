@@ -8,7 +8,8 @@ namespace HotelManagement.Presentation.DTO
 {
 	public class RoomDTO
 	{
-		public int ID { get; set; }
+		public int IDPhòng { get; set; }
+		public int IDLoạiPhòng { get; set; }
 		public string SốPhòng { get; set; }
 		public int SốTầng { get; set; }
 		public string TrạngThái { get; set; }

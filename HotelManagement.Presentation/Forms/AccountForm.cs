@@ -14,35 +14,43 @@ using System.Windows.Forms;
 
 namespace HotelManagement.Presentation.Forms
 {
-	public partial class CustomerForm : Form
+	public partial class AccountForm : Form
 	{
 		private readonly IUnitOfWork _unitOfWork;
-		private List<CustomerDTO> _customerDTOs;
+		private List<AccountDTO> _customerDTOs;
+		private List<string> _roleList;
+		private List<string> _statusList;
 		private bool _isEdit = false;
-		public CustomerForm(IUnitOfWork unitOfWork)
+		public AccountForm(IUnitOfWork unitOfWork)
 		{
 			InitializeComponent();
 			_unitOfWork = unitOfWork;
-			_customerDTOs = new List<CustomerDTO>();
+			_customerDTOs = new List<AccountDTO>();
+			_roleList = _unitOfWork.PhanQuyenRepository.GetAllRoles();
+			_statusList = new List<string> { "Hoạt động", "Tạm Dừng" };
+			cbRole.DataSource = _roleList;
+			cbStatus.DataSource = _statusList;
 			refreshCustomerList();
 			HidePanel();
 		}
 		private void refreshCustomerList()
 		{
-			var list = _unitOfWork.TaiKhoanRepository.GetAllCustomers();
+			var list = _unitOfWork.TaiKhoanRepository.GetAll();
 			_customerDTOs.Clear();
 			foreach (var customer in list)
 			{
-				_customerDTOs.Add(new CustomerDTO()
+				var roleName = _unitOfWork.PhanQuyenRepository.FindRoleName(customer.RoleID);
+				_customerDTOs.Add(new AccountDTO()
 				{
 					ID = customer.AccountID,
-					HọVàTên = customer.LastName + " " + customer.FirstName,
-					Tên = customer.FirstName,
-					TênĐệm = customer.LastName,
+					HọVàTên = customer.UserName,
 					GiớiTính = customer.Gender,
 					SốĐiệnThoại = customer.Phone,
 					Email = customer.Email.Replace("@", "\n@"),
-					ĐịaChỉ = customer.Address
+					ĐịaChỉ = customer.Address,
+					PhânQuyền = roleName,
+					TrạngThái = customer.Status,
+					NgàyTạo = customer.CreatedDate
 				});
 			}
 			dataGridView1.DataSource = null;
@@ -101,7 +109,7 @@ namespace HotelManagement.Presentation.Forms
 				MessageBox.Show("Số điện thoại không hợp lệ");
 				return;
 			}
-			
+
 			TaiKhoan taiKhoan = new TaiKhoan();
 			if (_isEdit)
 			{
@@ -116,8 +124,8 @@ namespace HotelManagement.Presentation.Forms
 			taiKhoan.Phone = txtPhone.TextString;
 			taiKhoan.Address = txtAddress.TextString;
 			taiKhoan.CreatedDate = DateTime.Now;
-			taiKhoan.RoleID = 3;
-			taiKhoan.Status = "Hoạt động";
+			taiKhoan.RoleID = _unitOfWork.PhanQuyenRepository.FindRoleID(cbRole.Text);
+			taiKhoan.Status = cbStatus.Text;
 			//Get selected radio button
 			string selectedText = "";
 			if (radioNam.Checked)
@@ -180,6 +188,8 @@ namespace HotelManagement.Presentation.Forms
 				radioNu.Checked = true;
 			else if (taiKhoan.Gender == "Khác")
 				radioKhac.Checked = true;
+			cbRole.SelectedItem = _unitOfWork.PhanQuyenRepository.FindRoleName(taiKhoan.RoleID);
+			cbStatus.SelectedItem = taiKhoan.Status;
 			_isEdit = true;
 		}
 		private void btnDelete_Click(object sender, EventArgs e)
