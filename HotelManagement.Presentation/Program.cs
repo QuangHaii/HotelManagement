@@ -27,7 +27,7 @@ namespace HotelManagement.Presentation
 			{
 				System.Windows.Forms.Application.EnableVisualStyles();
 				System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-				var mainForm = serviceProvider.GetRequiredService<MainForm>();
+				var mainForm = serviceProvider.GetRequiredService<LoginForm>();
 				System.Windows.Forms.Application.Run(mainForm);
 			}
 		}

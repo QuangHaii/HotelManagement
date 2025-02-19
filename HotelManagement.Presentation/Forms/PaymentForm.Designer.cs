@@ -212,7 +212,7 @@
 			btnRefresh.FlatStyle = FlatStyle.Flat;
 			btnRefresh.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			btnRefresh.ForeColor = Color.White;
-			btnRefresh.IconChar = FontAwesome.Sharp.IconChar.Refresh;
+			btnRefresh.IconChar = FontAwesome.Sharp.IconChar.Qrcode;
 			btnRefresh.IconColor = Color.White;
 			btnRefresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			btnRefresh.IconSize = 25;
@@ -220,7 +220,7 @@
 			btnRefresh.Name = "btnRefresh";
 			btnRefresh.Size = new Size(73, 50);
 			btnRefresh.TabIndex = 2;
-			btnRefresh.Text = "LàmMới";
+			btnRefresh.Text = "QR Code";
 			btnRefresh.TextImageRelation = TextImageRelation.ImageAboveText;
 			btnRefresh.UseVisualStyleBackColor = false;
 			btnRefresh.Click += btnRefresh_Click;

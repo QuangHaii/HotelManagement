@@ -37,6 +37,13 @@ namespace HotelManagement.Presentation
 			{
 				_currentUser = currentUser;
 				txtName.Text = _currentUser.UserName;
+				if(currentUser.RoleID != 1)
+				{
+					btnPhong.Visible = false;
+					btnLoaiDichVu.Visible = false;
+					btnTaiKhoan.Visible = false;
+					btnNhanVien.Visible = false;
+				}
 			}
 		}
 

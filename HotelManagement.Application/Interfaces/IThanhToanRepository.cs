@@ -10,5 +10,6 @@ namespace HotelManagement.Application.Interfaces
 	public interface IThanhToanRepository : IRepository<ThanhToan>
 	{
 		void Update(ThanhToan thanhToan);
+		ApiResponse generateQRCode(APIRequest apiRequest);
 	}
 }

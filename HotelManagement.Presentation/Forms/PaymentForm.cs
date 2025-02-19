@@ -117,7 +117,6 @@ namespace HotelManagement.Presentation.Forms
 			thanhToan.PaymentStatus = cbStatus.Text;
 			thanhToan.PaymentMethod = cbMethod.Text;
 			thanhToan.Description = txtNote.TextString;
-
 			if (_isEdit)
 			{
 				_unitOfWork.ThanhToanRepository.Update(thanhToan);
@@ -135,7 +134,10 @@ namespace HotelManagement.Presentation.Forms
 		}
 		private void btnRefresh_Click(object sender, EventArgs e)
 		{
-			refreshList();
+			int ID = GetIDFromTable();
+			var thanhToan = _unitOfWork.ThanhToanRepository.GetById(ID);
+			QRForm qRForm = new QRForm(_unitOfWork,thanhToan);
+			qRForm.ShowDialog();
 		}
 		private int GetIDFromTable()
 		{
