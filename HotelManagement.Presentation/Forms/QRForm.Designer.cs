@@ -122,8 +122,8 @@
 			// 
 			label6.AutoSize = true;
 			label6.Font = new Font("Tahoma", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label6.ForeColor = Color.DeepPink;
-			label6.Location = new Point(295, 9);
+			label6.ForeColor = Color.Gold;
+			label6.Location = new Point(313, 21);
 			label6.Name = "label6";
 			label6.Size = new Size(354, 29);
 			label6.TabIndex = 10;
@@ -181,8 +181,8 @@
 			// 
 			txtNoiDung.BackColor = SystemColors.Window;
 			txtNoiDung.BackgroundColor = SystemColors.Window;
-			txtNoiDung.BorderColor = Color.FromArgb(74, 144, 226);
-			txtNoiDung.BorderFocusColor = Color.FromArgb(78, 205, 196);
+			txtNoiDung.BorderColor = Color.FromArgb(78, 205, 196);
+			txtNoiDung.BorderFocusColor = Color.Gold;
 			txtNoiDung.BorderRadius = 10;
 			txtNoiDung.BorderSize = 3;
 			txtNoiDung.Font = new Font("Segoe UI", 9.5F);
@@ -202,8 +202,8 @@
 			// 
 			txtSoTien.BackColor = SystemColors.Window;
 			txtSoTien.BackgroundColor = SystemColors.Window;
-			txtSoTien.BorderColor = Color.FromArgb(74, 144, 226);
-			txtSoTien.BorderFocusColor = Color.FromArgb(78, 205, 196);
+			txtSoTien.BorderColor = Color.FromArgb(78, 205, 196);
+			txtSoTien.BorderFocusColor = Color.Gold;
 			txtSoTien.BorderRadius = 10;
 			txtSoTien.BorderSize = 3;
 			txtSoTien.Font = new Font("Segoe UI", 9.5F);
@@ -223,8 +223,8 @@
 			// 
 			txtTenTaiKhoan.BackColor = SystemColors.Window;
 			txtTenTaiKhoan.BackgroundColor = SystemColors.Window;
-			txtTenTaiKhoan.BorderColor = Color.FromArgb(74, 144, 226);
-			txtTenTaiKhoan.BorderFocusColor = Color.FromArgb(78, 205, 196);
+			txtTenTaiKhoan.BorderColor = Color.FromArgb(78, 205, 196);
+			txtTenTaiKhoan.BorderFocusColor = Color.Gold;
 			txtTenTaiKhoan.BorderRadius = 10;
 			txtTenTaiKhoan.BorderSize = 3;
 			txtTenTaiKhoan.Font = new Font("Segoe UI", 9.5F);
@@ -244,8 +244,8 @@
 			// 
 			txtSoTaiKhoan.BackColor = SystemColors.Window;
 			txtSoTaiKhoan.BackgroundColor = SystemColors.Window;
-			txtSoTaiKhoan.BorderColor = Color.FromArgb(74, 144, 226);
-			txtSoTaiKhoan.BorderFocusColor = Color.FromArgb(78, 205, 196);
+			txtSoTaiKhoan.BorderColor = Color.FromArgb(78, 205, 196);
+			txtSoTaiKhoan.BorderFocusColor = Color.Gold;
 			txtSoTaiKhoan.BorderRadius = 10;
 			txtSoTaiKhoan.BorderSize = 3;
 			txtSoTaiKhoan.Font = new Font("Segoe UI", 9.5F);
@@ -263,8 +263,8 @@
 			// 
 			// customButton2
 			// 
-			customButton2.BackColor = Color.FromArgb(74, 144, 226);
-			customButton2.BackgroundColor = Color.FromArgb(74, 144, 226);
+			customButton2.BackColor = Color.FromArgb(78, 205, 196);
+			customButton2.BackgroundColor = Color.FromArgb(78, 205, 196);
 			customButton2.BorderColor = Color.White;
 			customButton2.BorderRadius = 40;
 			customButton2.BorderSize = 4;
@@ -283,8 +283,8 @@
 			// 
 			// customButton1
 			// 
-			customButton1.BackColor = Color.FromArgb(74, 144, 226);
-			customButton1.BackgroundColor = Color.FromArgb(74, 144, 226);
+			customButton1.BackColor = Color.FromArgb(78, 205, 196);
+			customButton1.BackgroundColor = Color.FromArgb(78, 205, 196);
 			customButton1.BorderColor = Color.White;
 			customButton1.BorderRadius = 50;
 			customButton1.BorderSize = 4;
@@ -319,11 +319,11 @@
 			btnClose.IconChar = FontAwesome.Sharp.IconChar.Close;
 			btnClose.IconColor = Color.White;
 			btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			btnClose.IconSize = 37;
-			btnClose.Location = new Point(912, 0);
+			btnClose.IconSize = 50;
+			btnClose.Location = new Point(899, 0);
 			btnClose.Margin = new Padding(4, 3, 4, 3);
 			btnClose.Name = "btnClose";
-			btnClose.Size = new Size(37, 48);
+			btnClose.Size = new Size(50, 50);
 			btnClose.TabIndex = 14;
 			btnClose.TabStop = false;
 			btnClose.Click += btnClose_Click;
@@ -335,7 +335,7 @@
 			panel1.Dock = DockStyle.Top;
 			panel1.Location = new Point(0, 0);
 			panel1.Name = "panel1";
-			panel1.Size = new Size(949, 48);
+			panel1.Size = new Size(949, 50);
 			panel1.TabIndex = 15;
 			panel1.MouseDown += panelTitleBar_MouseDown;
 			// 
@@ -343,7 +343,7 @@
 			// 
 			AutoScaleDimensions = new SizeF(7F, 14F);
 			AutoScaleMode = AutoScaleMode.Font;
-			BackColor = Color.FromArgb(14, 36, 66);
+			BackColor = Color.FromArgb(74, 144, 226);
 			ClientSize = new Size(949, 458);
 			Controls.Add(panel1);
 			Controls.Add(groupBox2);
